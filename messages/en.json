@@ -1,0 +1,169 @@
+{
+    "Metadata": {
+        "siteName": "Leutheria",
+        "titleTemplate": "%s — Leutheria",
+        "home": {
+            "title": "Leutheria — Your administrative supplies partner",
+            "description": "Leutheria supplies French businesses with office and administrative materials, selected for quality and consistency. Request a quote."
+        },
+        "contact": {
+            "title": "Contact us",
+            "description": "Request a quote, discuss a partnership, or ask us anything — the Leutheria team answers quickly."
+        },
+        "legal": {
+            "title": "Legal mentions",
+            "description": "Legal information for leutheria.co: publisher, hosting provider, intellectual property and personal data."
+        }
+    },
+    "Nav": {
+        "home": "Home",
+        "contact": "Contact us",
+        "contactShort": "Contact",
+        "legal": "Legal mentions",
+        "languageSwitcher": "Change language"
+    },
+    "Home": {
+        "hero": {
+            "eyebrow": "Office and administrative supplies",
+            "title": "Your administrative supplies partner.",
+            "lead": "Founded in 2020, Leutheria supplies French businesses with the office materials they run on. We select for quality and consistency, so ordering stays predictable and what your clients handle reflects the standard you set.",
+            "ctaPrimary": "Request a quote",
+            "ctaSecondary": "Why Leutheria"
+        },
+        "offer": {
+            "title": "What we supply",
+            "lead": "Everyday consumables, chosen to be reordered rather than reconsidered.",
+            "supplies": {
+                "title": "Administrative supplies",
+                "body": "Paper, stationery, filing and the day-to-day consumables your offices go through. Dependable references you can standardise on."
+            },
+            "quality": {
+                "title": "Selected for quality",
+                "body": "We favour materials that hold up in daily use, so a reorder is never a gamble and nothing has to be checked twice."
+            },
+            "quote": {
+                "title": "Quote on request",
+                "body": "Tell us what you need and in what volume. We come back with a priced proposal, without a catalogue to wade through first."
+            }
+        },
+        "approach": {
+            "title": "Why Leutheria",
+            "lead": "What a small, independent supplier can offer that a marketplace cannot.",
+            "direct": {
+                "title": "Direct contact",
+                "body": "You talk to the people who handle your order. No call centre, no ticket queue, no account manager who changes every quarter."
+            },
+            "standard": {
+                "title": "Quality your clients notice",
+                "body": "The materials that leave your desk say something about your business. We select on that basis, not on unit price alone."
+            },
+            "french": {
+                "title": "Established in France",
+                "body": "A French company registered in Paris since 2020, invoicing and contracting under French law."
+            }
+        },
+        "company": {
+            "title": "The company",
+            "lead": "Leutheria is a French company, registered in Paris and trading since 2020.",
+            "formLabel": "Legal form",
+            "formValue": "SARL registered with the {city} Trade and Companies Register",
+            "foundedLabel": "Trading since",
+            "foundedValue": "{year}",
+            "locationLabel": "Registered office",
+            "locationValue": "{city}, France"
+        },
+        "cta": {
+            "title": "Need a quote?",
+            "body": "Tell us what you need and in what volume. We read every message and come back to you quickly.",
+            "button": "Contact us"
+        }
+    },
+    "Contact": {
+        "title": "Contact us",
+        "lead": "Need a quote, want to discuss a partnership, or something else entirely? Send us a message and we will come back to you quickly.",
+        "fields": {
+            "name": "Your name",
+            "email": "Your email",
+            "message": "Your message"
+        },
+        "submit": "Send message",
+        "submitting": "Sending…",
+        "success": "Thanks, your message is on its way. We will get back to you shortly.",
+        "error": "Sending failed. Please try again, or write to us directly at {email}.",
+        "emailSubject": "New message from {name} — leutheria.co",
+        "privacyNotice": "The details you enter are used solely to handle your request. They are delivered through our form-sending provider and are never sold or shared with third parties.",
+        "unconfigured": "The form is not configured yet. In the meantime, write to us directly:",
+        "errors": {
+            "required": "This field is required.",
+            "invalidEmail": "This email address looks incorrect.",
+            "tooShort": "Please tell us a little more about your request."
+        },
+        "aside": {
+            "title": "Details",
+            "emailLabel": "Email",
+            "addressLabel": "Address",
+            "hoursLabel": "Opening hours",
+            "hoursValue": "Monday to Friday, 9:00 – 20:00",
+            "responseLabel": "Response time",
+            "responseValue": "Usually within 48 working hours."
+        }
+    },
+    "Legal": {
+        "title": "Legal mentions",
+        "lead": "Legal information about leutheria.co, published in accordance with French Act No. 2004-575 of 21 June 2004 on confidence in the digital economy.",
+        "updatedOn": "Last updated: {date}",
+        "editor": {
+            "title": "Site publisher",
+            "nameLabel": "Company name",
+            "formLabel": "Legal form",
+            "formValue": "Limited liability company (SARL)",
+            "capitalLabel": "Share capital",
+            "addressLabel": "Registered office",
+            "rcsLabel": "Registration",
+            "rcsValue": "{city} Trade and Companies Register — {siren}",
+            "siretLabel": "SIRET (head office)",
+            "vatLabel": "Intra-community VAT",
+            "apeLabel": "Industry code",
+            "apeValue": "{code} — Distance selling, general catalogue",
+            "emailLabel": "Contact"
+        },
+        "director": {
+            "title": "Publication director",
+            "body": "{name}, acting as manager (gérant) of {company}."
+        },
+        "host": {
+            "title": "Hosting provider",
+            "body": "This site is hosted by {name}, {address}, {country}. Website: {url}."
+        },
+        "intellectualProperty": {
+            "title": "Intellectual property",
+            "body": "Every element making up this site — text, images, logos, trade marks, structure and code — is protected by copyright and trade mark law. Any reproduction, representation, adaptation or exploitation, in whole or in part, without the prior written consent of {company}, is prohibited."
+        },
+        "personalData": {
+            "title": "Personal data",
+            "body": "The only personal data collected on this site is what you voluntarily submit through the contact form: name, email address and message content. It is processed for the sole purpose of answering your request, on the basis of your consent, and is never sold or shared with third parties.",
+            "processor": "Message delivery is handled by our form-sending provider, acting as a processor, which does not retain message content beyond its transmission.",
+            "retention": "Exchanges are kept for as long as needed to handle your request, then archived or deleted.",
+            "rights": "Under the General Data Protection Regulation (GDPR) and the French Data Protection Act, you have the right to access, rectify, erase, restrict and object to the processing of your data. To exercise those rights, write to {email}. You may also lodge a complaint with the CNIL, the French data protection authority (www.cnil.fr)."
+        },
+        "cookies": {
+            "title": "Cookies",
+            "body": "This site sets no advertising cookies and no analytics trackers. Only cookies strictly necessary for it to work — notably remembering your chosen language — may be used; these are exempt from prior consent."
+        },
+        "liability": {
+            "title": "Liability",
+            "body": "{company} strives to keep the information published on this site accurate and up to date, without being able to guarantee that it is exhaustive. The site may link to third-party sites whose content is not the responsibility of {company}."
+        }
+    },
+    "NotFound": {
+        "title": "Page not found",
+        "body": "The page you are looking for does not exist or has been moved.",
+        "cta": "Back to home"
+    },
+    "Footer": {
+        "tagline": "A better world for your company. Office and administrative supplies for French businesses, selected for quality and consistency.",
+        "navLabel": "Footer navigation",
+        "followLabel": "Facebook",
+        "rights": "All rights reserved."
+    }
+}

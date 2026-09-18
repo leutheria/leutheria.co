@@ -1,0 +1,89 @@
+@import 'tailwindcss';
+
+/*
+ * Palette derived from the Leutheria logo: `--accent` is the mark's deepest
+ * colour (#327571), which is the only one of its three greens dark enough to
+ * carry text and button fills at WCAG AA on white.
+ * Every foreground/background pair below meets WCAG AA (4.5:1) in both schemes.
+ * The `-invert` tokens are for the dark band inside a light page; in dark mode
+ * they collapse onto the regular tokens.
+ */
+:root {
+    --background: #ffffff;
+    --surface: #f3f7f6;
+    --surface-invert: #0f2a28;
+    --foreground: #14201f;
+    --foreground-invert: #edf5f4;
+    --muted: #53645f;
+    --muted-invert: #a2bbb7;
+    --border: #dde8e6;
+    --border-invert: #204340;
+    --accent: #327571;
+    --accent-hover: #265956;
+    --accent-soft: #eaf3f2;
+    --accent-foreground: #ffffff;
+    --highlight: #b45309;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #071613;
+        --surface: #0d221f;
+        --surface-invert: #0d221f;
+        --foreground: #e6f0ee;
+        --foreground-invert: #e6f0ee;
+        --muted: #93aba7;
+        --muted-invert: #93aba7;
+        --border: #17342f;
+        --border-invert: #17342f;
+        --accent: #6fc2bb;
+        --accent-hover: #8ed5cf;
+        --accent-soft: #0e2825;
+        --accent-foreground: #041614;
+        --highlight: #fbbf24;
+    }
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-surface: var(--surface);
+    --color-surface-invert: var(--surface-invert);
+    --color-foreground: var(--foreground);
+    --color-foreground-invert: var(--foreground-invert);
+    --color-muted: var(--muted);
+    --color-muted-invert: var(--muted-invert);
+    --color-border: var(--border);
+    --color-border-invert: var(--border-invert);
+    --color-accent: var(--accent);
+    --color-accent-hover: var(--accent-hover);
+    --color-accent-soft: var(--accent-soft);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-highlight: var(--highlight);
+
+    --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --font-display: var(--font-space-grotesk), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: var(--background);
+        color: var(--foreground);
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+    }
+
+    ::selection {
+        background-color: var(--accent);
+        color: var(--accent-foreground);
+    }
+
+    :focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+        border-radius: 2px;
+    }
+}
