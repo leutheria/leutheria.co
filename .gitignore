@@ -1,28 +1,44 @@
-# Cache
-web/app/cache
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Application
-web/app/plugins/*
-!web/app/plugins/.gitkeep
-web/app/mu-plugins/*/
-web/app/upgrade
-web/app/uploads/*
-!web/app/uploads/.gitkeep
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
-# WordPress
-web/wp
-web/.htaccess
+# testing
+/coverage
 
-# Logs
-*.log
+# next.js
+/.next/
+/out/
 
-# Dotenv
-.env
-.env.*
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# keep the documented template committed
 !.env.example
-
-# Composer
-/vendor
-
-# WP-CLI
-wp-cli.local.yml
