@@ -1,0 +1,58 @@
+name: 'Continuous Integration'
+
+on:
+    pull_request:
+    push:
+        branches:
+            - 'main'
+
+jobs:
+    lint:
+        name: Lint
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v7
+            - name: Setup Node.js
+              uses: actions/setup-node@v7
+              with:
+                  node-version: '24'
+                  cache: 'yarn'
+            - name: Install dependencies
+              run: yarn install --frozen-lockfile
+            - name: Biome
+              run: yarn lint
+            - name: Prettier
+              run: yarn prettier:check
+            - name: Typecheck
+              run: yarn typecheck
+            - name: Translation catalogue parity
+              run: node scripts/check-messages.mjs
+            - name: Colour contrast (WCAG AA)
+              run: node scripts/check-contrast.mjs
+
+    build:
+        name: Build
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v7
+            - name: Setup Node.js
+              uses: actions/setup-node@v7
+              with:
+                  node-version: '24'
+                  cache: 'yarn'
+            - name: Install dependencies
+              run: yarn install --frozen-lockfile
+            - name: Build
+              run: yarn build
+
+    ci-passed:
+        name: CI passed
+        needs: [lint, build]
+        if: always()
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check that all required jobs succeeded
+              if: contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')
+              run: exit 1
