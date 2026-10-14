@@ -21,9 +21,9 @@ notice. It replaces the previous WordPress (Roots Bedrock) installation.
 ## Getting started
 
 ```bash
-yarn install
+pnpm install
 cp .env.example .env.local   # then fill in the Web3Forms key
-yarn dev                     # http://localhost:3000
+pnpm dev                     # http://localhost:3000
 ```
 
 ## Environment variables
@@ -122,21 +122,21 @@ reads on both backgrounds, there is no dark-mode variant to keep in sync.
 | `src/app/opengraph-image.png` | 1200×630 link-preview card                                               |
 | `src/app/twitter-image.png`   | Same card, declared separately for X                                     |
 
-`yarn check:contrast` parses the tokens out of `globals.css` and fails CI if any
+`pnpm check:contrast` parses the tokens out of `globals.css` and fails CI if any
 foreground/background pair drops below WCAG AA (4.5:1).
 
 ## Scripts
 
 ```bash
-yarn dev              # dev server
-yarn build            # production build
-yarn start            # serve the production build
-yarn lint             # Biome check
-yarn lint:fix         # Biome check --write
-yarn typecheck        # tsc --noEmit
-yarn check:messages   # en/fr catalogue parity
-yarn check:contrast   # WCAG AA palette check
-yarn lint-ci          # all of the above except the build
+pnpm dev              # dev server
+pnpm build            # production build
+pnpm start            # serve the production build
+pnpm lint             # Biome check
+pnpm lint:fix         # Biome check --write
+pnpm typecheck        # tsc --noEmit
+pnpm check:messages   # en/fr catalogue parity
+pnpm check:contrast   # WCAG AA palette check
+pnpm lint-ci          # all of the above except the build
 ```
 
 ## Deployment

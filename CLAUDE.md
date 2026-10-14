@@ -13,9 +13,11 @@ Read `README.md` first. The points below are the ones that are easy to get wrong
 
 ## Conventions
 
-- **Package manager is yarn.** Never npm or pnpm.
+- **Package manager is pnpm.** Never npm or yarn. Its version is pinned by `packageManager` in
+  `package.json`, and `pnpm-workspace.yaml` lists the dependencies allowed to run install scripts
+  (`allowBuilds`; pnpm fails the install on a new unlisted one).
 - **Formatting is Biome**, not ESLint: 4-space indent, 120 columns, single quotes,
-  no semicolons, trailing commas `es5`. Run `yarn lint:fix` after editing.
+  no semicolons, trailing commas `es5`. Run `pnpm lint:fix` after editing.
   Prettier handles CSS / Markdown / YAML only.
 
 ## URL structure is inherited — treat it as fixed
@@ -51,7 +53,7 @@ belongs in the message catalogues, not the config.
 
 `src/app/globals.css` is the only place colours are defined. Never hard-code a hex in a
 component. The palette derives from the logo: `--accent` is `#327571`, the mark's deepest
-green. Every foreground/background pair must stay at WCAG AA — `yarn check:contrast`
+green. Every foreground/background pair must stay at WCAG AA — `pnpm check:contrast`
 enforces it.
 
 The logo is inlined in `src/components/logo.tsx` from `Brand/logo-square.svg`, with the
