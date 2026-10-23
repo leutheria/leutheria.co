@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
 import { notFound } from 'next/navigation'
+import Script from 'next/script'
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { ReactNode } from 'react'
@@ -66,6 +67,12 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
                     <main className="flex-1">{children}</main>
                     <SiteFooter />
                 </NextIntlClientProvider>
+                {/* Umami (cookieless, see the privacy policy); data-domains keeps dev and Vercel previews out of the stats */}
+                <Script
+                    src={company.analytics.scriptUrl}
+                    data-website-id={company.analytics.websiteId}
+                    data-domains="leutheria.co"
+                />
             </body>
         </html>
     )

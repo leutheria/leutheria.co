@@ -181,7 +181,7 @@
     },
     "Privacy": {
         "title": "Privacy policy",
-        "lead": "What personal data leutheria.co collects, why, who receives it and how long it is kept. The site has no customer account, no newsletter and no analytics: the contact form is the only place where you hand over data.",
+        "lead": "What personal data leutheria.co collects, why, who receives it and how long it is kept. The site has no customer account and no newsletter: the contact form is the only place where you hand over data, and visits are counted without cookies.",
         "labels": {
             "data": "Data",
             "purpose": "Purpose",
@@ -212,6 +212,15 @@
             "legalBasis": "The legitimate interest of {company} in running a secure and available website (Article 6(1)(f) GDPR).",
             "recipients": "<hostLink>{host}</hostLink>, the site’s hosting provider, acting as processor.",
             "retention": "Vercel keeps runtime logs for at most 30 days, depending on the hosting plan. It may keep some security data longer under <policy>its own privacy policy</policy>."
+        },
+        "audience": {
+            "title": "Audience measurement",
+            "intro": "Visits to the site are counted with {analytics}, an open-source tool that {analyticsOperator} hosts itself. It sets no cookie and stores nothing in your browser.",
+            "data": "Pages viewed, the site you came from, device type, browser, operating system, language, screen size, and the country and city derived from your IP address. The IP address is also used to tell visits apart, then it is not kept.",
+            "purpose": "Knowing how many people visit the site and which pages they read, to improve it.",
+            "legalBasis": "The legitimate interest of {company} in knowing how its website is used (Article 6(1)(f) GDPR). As nothing is read from or stored in your browser, no consent is required.",
+            "recipients": "<umami>{analyticsOperator}</umami>, which runs the {analytics} instance on its own server in France (OVH), acting as processor; Cloudflare, through which requests to analytics.leutheria.co pass. Nothing is sent to any other third party.",
+            "retention": "Statistics kept for as long as the site exists, without IP addresses or any data that identifies you directly."
         },
         "transfers": {
             "title": "Transfers outside the European Union",
@@ -253,7 +262,7 @@
         "lead": "What the site stores in your browser, and why it shows no consent banner.",
         "summary": {
             "title": "In short",
-            "body": "leutheria.co sets a single cookie, to keep the language you chose. It sets no analytics, advertising or social-media cookie and loads no third-party tracker."
+            "body": "leutheria.co sets a single cookie, to keep the language you chose. It sets no analytics, advertising or social-media cookie and loads no advertising tracker: visits are counted without cookies (see the privacy policy)."
         },
         "list": {
             "title": "Cookies used",

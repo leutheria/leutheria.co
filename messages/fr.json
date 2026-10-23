@@ -181,7 +181,7 @@
     },
     "Privacy": {
         "title": "Politique de confidentialité",
-        "lead": "Quelles données personnelles leutheria.co collecte, pourquoi, qui les reçoit et combien de temps elles sont conservées. Le site n’a ni compte client, ni newsletter, ni mesure d’audience : le formulaire de contact est le seul endroit où vous transmettez des données.",
+        "lead": "Quelles données personnelles leutheria.co collecte, pourquoi, qui les reçoit et combien de temps elles sont conservées. Le site n’a ni compte client, ni newsletter : le formulaire de contact est le seul endroit où vous transmettez des données, et la fréquentation est mesurée sans cookie.",
         "labels": {
             "data": "Données",
             "purpose": "Finalité",
@@ -212,6 +212,15 @@
             "legalBasis": "L’intérêt légitime de {company} à exploiter un site sûr et disponible (article 6.1.f du RGPD).",
             "recipients": "<hostLink>{host}</hostLink>, hébergeur du site, en qualité de sous-traitant.",
             "retention": "Vercel conserve les journaux d’exécution 30 jours au plus, selon l’offre d’hébergement. Il peut conserver plus longtemps certaines données de sécurité, conformément à <policy>sa propre politique de confidentialité</policy>."
+        },
+        "audience": {
+            "title": "Mesure d’audience",
+            "intro": "La fréquentation du site est mesurée avec {analytics}, un outil libre que {analyticsOperator} héberge lui-même. Il ne dépose aucun cookie et n’enregistre rien dans votre navigateur.",
+            "data": "Pages vues, site d’où vous venez, type d’appareil, navigateur, système d’exploitation, langue, taille d’écran, ainsi que le pays et la ville déduits de votre adresse IP. L’adresse IP sert aussi à distinguer les visites, puis n’est pas conservée.",
+            "purpose": "Connaître la fréquentation du site et les pages consultées, pour l’améliorer.",
+            "legalBasis": "L’intérêt légitime de {company} à connaître la fréquentation de son site (article 6.1.f du RGPD). Rien n’étant lu ni enregistré dans votre navigateur, aucun consentement n’est requis.",
+            "recipients": "<umami>{analyticsOperator}</umami>, qui exploite l’instance {analytics} sur son propre serveur en France (OVH), en qualité de sous-traitant ; Cloudflare, par lequel transitent les requêtes vers analytics.leutheria.co. Rien n’est transmis à un autre tiers.",
+            "retention": "Statistiques conservées tant que le site existe, sans adresse IP ni donnée permettant de vous identifier directement."
         },
         "transfers": {
             "title": "Transferts hors de l’Union européenne",
@@ -253,7 +262,7 @@
         "lead": "Ce que le site enregistre dans votre navigateur, et pourquoi il n’affiche pas de bandeau de consentement.",
         "summary": {
             "title": "En bref",
-            "body": "leutheria.co dépose un seul cookie, pour conserver la langue choisie. Il ne dépose aucun cookie de mesure d’audience, de publicité ou de réseau social et ne charge aucun traceur tiers."
+            "body": "leutheria.co dépose un seul cookie, pour conserver la langue choisie. Il ne dépose aucun cookie de mesure d’audience, de publicité ou de réseau social et ne charge aucun traceur publicitaire : la fréquentation est mesurée sans cookie (voir la politique de confidentialité)."
         },
         "list": {
             "title": "Cookies utilisés",
