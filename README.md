@@ -3,8 +3,8 @@
 Corporate website for **Leutheria** — a French supplier of office and administrative
 materials (SARL, RCS Paris, APE 47.91A).
 
-Bilingual (English / French) marketing site with a homepage, a contact form and a legal
-notice. It replaces the previous WordPress (Roots Bedrock) installation.
+Bilingual (English / French) marketing site with a homepage, a contact form and three
+legal pages (legal notice, privacy policy, cookies). It replaces the previous WordPress (Roots Bedrock) installation.
 
 ## Stack
 
@@ -45,17 +45,20 @@ English is the default locale and is served **unprefixed**; French lives under `
 That is the structure the WordPress site (Polylang) already had, so the rewrite keeps
 every indexed URL:
 
-| URL                    | Status                              |
-| ---------------------- | ----------------------------------- |
-| `/`                    | preserved                           |
-| `/contact-us`          | preserved                           |
-| `/legal-mentions`      | preserved                           |
-| `/fr`                  | preserved                           |
-| `/fr/contactez-nous`   | preserved                           |
-| `/fr/mentions-legales` | preserved                           |
-| `/about`               | 308 → `/` (now a homepage section)  |
-| `/fr/a-propos`         | 308 → `/fr`                         |
-| `/fr/bonjour`          | 308 → `/fr` (WordPress sample post) |
+| URL                                | Status                              |
+| ---------------------------------- | ----------------------------------- |
+| `/`                                | preserved                           |
+| `/contact-us`                      | preserved                           |
+| `/legal-mentions`                  | preserved                           |
+| `/fr`                              | preserved                           |
+| `/fr/contactez-nous`               | preserved                           |
+| `/fr/mentions-legales`             | preserved                           |
+| `/privacy-policy`                  | new (October 2026)                  |
+| `/fr/politique-de-confidentialite` | new (October 2026)                  |
+| `/cookies`, `/fr/cookies`          | new (October 2026)                  |
+| `/about`                           | 308 → `/` (now a homepage section)  |
+| `/fr/a-propos`                     | 308 → `/fr`                         |
+| `/fr/bonjour`                      | 308 → `/fr` (WordPress sample post) |
 
 The per-locale spellings live in `pathnames` in `src/i18n/routing.ts`; the redirects live
 in `next.config.ts`. **Do not "tidy" either** — the spellings are load-bearing for SEO.
@@ -66,12 +69,14 @@ in `next.config.ts`. **Do not "tidy" either** — the spellings are load-bearing
 messages/               en.json / fr.json — every user-facing string
 src/
   app/
-    [locale]/           layout, home, contact, legal-mentions, not-found
+    [locale]/           layout, home, contact, legal-mentions, privacy-policy, cookies,
+                        not-found ([...rest] routes unknown URLs to it)
     globals.css         Tailwind v4 theme tokens (light + dark)
     icon.svg            favicon
     robots.ts
     sitemap.ts
   components/           header, footer, locale switcher, contact form, primitives
+    legal/              shared legal page layout, scrollspy table of contents
   config/company.ts     single source of truth for legal + contact identity
   i18n/                 routing, navigation wrappers, per-request config
   lib/
@@ -100,8 +105,19 @@ scripts/
 the French public registry (INSEE / RNE) for SIREN **891978819**. The intra-community VAT
 number is derived from the SIREN: `key = (12 + 3 × (SIREN mod 97)) mod 97`.
 
-Update `LEGAL_UPDATED_ON` in `src/app/[locale]/legal-mentions/page.tsx` whenever the
-wording of the notice changes.
+The third parties the legal pages name — host (Vercel), DNS (Cloudflare), form
+provider (Web3Forms) and mailbox (Google Workspace) — are listed there too. Re-check them
+when the infrastructure changes: `dig +short NS leutheria.co` (Cloudflare),
+`dig +short leutheria.co` (Vercel IPs, so Cloudflare does not proxy) and
+`dig +short MX leutheria.co` (Google).
+
+Each legal page carries its own "last updated" date: `LEGAL_UPDATED_ON`,
+`PRIVACY_UPDATED_ON` and `COOKIES_UPDATED_ON` at the top of
+`src/app/[locale]/{legal-mentions,privacy-policy,cookies}/page.tsx`. Bump the one whose
+wording changes. The cookies page lists every cookie the site sets (today only
+next-intl's `NEXT_LOCALE`, a session cookie): update it if `localeCookie` in
+`src/i18n/routing.ts` changes or a new cookie appears. `sitemap.ts` likewise has a fixed
+`CONTENT_UPDATED_ON` to bump when the indexable pages change.
 
 ## Brand
 
