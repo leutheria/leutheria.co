@@ -65,10 +65,13 @@ component. The palette derives from the logo: `--accent` is `#327571`, the mark'
 green. Every foreground/background pair must stay at WCAG AA — `pnpm check:contrast`
 enforces it.
 
+`themeColor` in `src/lib/metadata.ts` (the `theme-color` meta and the web manifest) repeats
+`--background` for both schemes: update it with that token.
+
 The logo is inlined in `src/components/logo.tsx` from `Brand/logo-square.svg`, with the
 Illustrator `<style>` classes resolved to literal `fill` attributes (global class names
 inside an inline SVG collide). It needs no dark variant. If the logo is revised, re-inline
-it there and regenerate `src/app/icon.svg`, `apple-icon.png` and `opengraph-image.png`.
+it there and regenerate `src/app/icon.svg`, `src/app/apple-icon.png` and `public/og-image.png`.
 
 ## Contact form
 
