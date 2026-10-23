@@ -21,6 +21,10 @@
         "cookies": {
             "title": "Cookies",
             "description": "The only cookie set by leutheria.co, what it does and why it needs no consent."
+        },
+        "notFound": {
+            "title": "Page not found",
+            "description": "The page you are looking for does not exist or has been moved."
         }
     },
     "Nav": {

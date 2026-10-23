@@ -1,7 +1,16 @@
+import type { Metadata } from 'next'
 import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import { buttonStyles } from '@/components/button-styles'
 import { Container } from '@/components/container'
 import { Link } from '@/i18n/navigation'
+
+/** Without this the 404 inherits the home title. Next.js adds `noindex` on its own. */
+export async function generateMetadata(): Promise<Metadata> {
+    const t = await getTranslations('Metadata.notFound')
+
+    return { title: t('title'), description: t('description') }
+}
 
 export default function NotFoundPage() {
     const t = useTranslations('NotFound')
