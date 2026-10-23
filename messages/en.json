@@ -11,16 +11,26 @@
             "description": "Request a quote, discuss a partnership, or ask us anything — the Leutheria team answers quickly."
         },
         "legal": {
-            "title": "Legal mentions",
-            "description": "Legal information for leutheria.co: publisher, hosting provider, intellectual property and personal data."
+            "title": "Legal notice",
+            "description": "Legal notice for leutheria.co: publisher, hosting provider, domain name, intellectual property and terms of sale."
+        },
+        "privacy": {
+            "title": "Privacy policy",
+            "description": "How Leutheria processes the personal data collected on leutheria.co, its providers, retention periods and your GDPR rights."
+        },
+        "cookies": {
+            "title": "Cookies",
+            "description": "The only cookie set by leutheria.co, what it does and why it needs no consent."
         }
     },
     "Nav": {
         "home": "Home",
         "contact": "Contact us",
         "contactShort": "Contact",
-        "legal": "Legal mentions",
-        "languageSwitcher": "Change language"
+        "legal": "Legal notice",
+        "languageSwitcher": "Change language",
+        "privacy": "Privacy policy",
+        "cookies": "Cookies"
     },
     "Home": {
         "hero": {
@@ -108,12 +118,22 @@
             "responseValue": "Usually within 48 working hours."
         }
     },
-    "Legal": {
-        "title": "Legal mentions",
-        "lead": "Legal information about leutheria.co, published in accordance with French Act No. 2004-575 of 21 June 2004 on confidence in the digital economy.",
+    "LegalPages": {
+        "breadcrumbLabel": "Breadcrumb",
+        "breadcrumbHome": "Home",
+        "breadcrumbSection": "Legal information",
+        "eyebrow": "Legal information",
+        "tabsLabel": "Legal documents",
+        "tocTitle": "On this page",
         "updatedOn": "Last updated: {date}",
-        "editor": {
+        "country": "{code, select, US {United States} FR {France} other {{code}}}"
+    },
+    "Legal": {
+        "title": "Legal notice",
+        "lead": "Legal information about leutheria.co, published in accordance with French Act No. 2004-575 of 21 June 2004 on confidence in the digital economy.",
+        "identity": {
             "title": "Site publisher",
+            "badge": "Legal identification",
             "nameLabel": "Company name",
             "formLabel": "Legal form",
             "formValue": "Limited liability company (SARL)",
@@ -125,34 +145,137 @@
             "vatLabel": "Intra-community VAT",
             "apeLabel": "Industry code",
             "apeValue": "{code} — Distance selling, general catalogue",
+            "directorLabel": "Publication director",
+            "directorValue": "{name}, manager (gérant)",
             "emailLabel": "Contact"
         },
-        "director": {
-            "title": "Publication director",
-            "body": "{name}, acting as manager (gérant) of {company}."
-        },
         "host": {
-            "title": "Hosting provider",
-            "body": "This site is hosted by {name}, {address}, {country}. Website: {url}."
+            "title": "Hosting",
+            "body": "The site is hosted by <strong>{name}</strong>, {address}, {country} — <link>{url}</link>.",
+            "cdn": "Pages are delivered through Vercel’s edge network, which acts as the site’s content delivery network (CDN): copies of the pages are cached on Vercel servers close to visitors."
+        },
+        "dns": {
+            "title": "Domain name",
+            "body": "The DNS zone of leutheria.co is managed by <strong>{name}</strong>, {address}, {country} — <link>{url}</link>. Cloudflare only resolves the domain name: it neither hosts nor relays the site’s pages."
         },
         "intellectualProperty": {
             "title": "Intellectual property",
             "body": "Every element making up this site — text, images, logos, trade marks, structure and code — is protected by copyright and trade mark law. Any reproduction, representation, adaptation or exploitation, in whole or in part, without the prior written consent of {company}, is prohibited."
         },
-        "personalData": {
-            "title": "Personal data",
-            "body": "The only personal data collected on this site is what you voluntarily submit through the contact form: name, email address and message content. It is processed for the sole purpose of answering your request, on the basis of your consent, and is never sold or shared with third parties.",
-            "processor": "Message delivery is handled by our form-sending provider, acting as a processor, which does not retain message content beyond its transmission.",
-            "retention": "Exchanges are kept for as long as needed to handle your request, then archived or deleted.",
-            "rights": "Under the General Data Protection Regulation (GDPR) and the French Data Protection Act, you have the right to access, rectify, erase, restrict and object to the processing of your data. To exercise those rights, write to {email}. You may also lodge a complaint with the CNIL, the French data protection authority (www.cnil.fr)."
-        },
-        "cookies": {
-            "title": "Cookies",
-            "body": "This site sets no advertising cookies and no analytics trackers. Only cookies strictly necessary for it to work — notably remembering your chosen language — may be used; these are exempt from prior consent."
+        "terms": {
+            "title": "Terms of sale",
+            "body": "{company} sells to business customers on quotation only, and its terms and conditions of sale are sent with each quote."
         },
         "liability": {
             "title": "Liability",
             "body": "{company} strives to keep the information published on this site accurate and up to date, without being able to guarantee that it is exhaustive. The site may link to third-party sites whose content is not the responsibility of {company}."
+        },
+        "personalData": {
+            "title": "Personal data and cookies",
+            "body": "How {company} processes personal data is explained in the <privacy>privacy policy</privacy>. The only cookie the site sets is described on the <cookies>cookies page</cookies>."
+        }
+    },
+    "Privacy": {
+        "title": "Privacy policy",
+        "lead": "What personal data leutheria.co collects, why, who receives it and how long it is kept. The site has no customer account, no newsletter and no analytics: the contact form is the only place where you hand over data.",
+        "labels": {
+            "data": "Data",
+            "purpose": "Purpose",
+            "legalBasis": "Legal basis",
+            "recipients": "Recipients",
+            "retention": "Retention"
+        },
+        "controller": {
+            "title": "Data controller",
+            "body": "The controller of the processing described below is <strong>{legalName}</strong>, {legalForm} with registered office at {address}, registered with the {rcsCity} Trade and Companies Register under number {siren}.",
+            "contact": "For any question about your data, write to <mailto>{email}</mailto>."
+        },
+        "contactForm": {
+            "title": "Contact form",
+            "intro": "When you send a message through the <contact>contact form</contact>:",
+            "data": "Your name, email address and message. {formProvider}, which receives the form, also sees your IP address as part of the request.",
+            "purpose": "Answering your message and, where relevant, preparing and following up a quote.",
+            "legalBasis": "The legitimate interest of {company} in answering the people who contact it (Article 6(1)(f) GDPR) and, when you ask for a quote, steps taken at your request before entering into a contract (Article 6(1)(b) GDPR).",
+            "recipients": "The {company} staff handling your request; <form>{formProvider}</form>, which receives the form from your browser and forwards it by email; <mail>{mailProvider}</mail>, which hosts the {company} mailbox the message lands in. Both act as processors.",
+            "retention": "Three years from the last exchange with you, then deleted. If the exchange leads to an order, the related commercial documents are kept for the periods required by commercial and tax law.",
+            "providerNote": "According to its documentation, {formProvider} forwards submissions by email and deletes its server logs, which may contain personal data, every two months. {company} does not control that provider’s own retention: see <policy>its privacy policy</policy>."
+        },
+        "hosting": {
+            "title": "Hosting logs",
+            "intro": "Like any web host, {host} records technical data each time a page of the site is requested, whether or not you use the form.",
+            "data": "IP address, browser user agent, requested URL, date and time, and the status of the response.",
+            "purpose": "Delivering the site, keeping it secure and diagnosing errors.",
+            "legalBasis": "The legitimate interest of {company} in running a secure and available website (Article 6(1)(f) GDPR).",
+            "recipients": "<hostLink>{host}</hostLink>, the site’s hosting provider, acting as processor.",
+            "retention": "Vercel keeps runtime logs for at most 30 days, depending on the hosting plan. It may keep some security data longer under <policy>its own privacy policy</policy>."
+        },
+        "transfers": {
+            "title": "Transfers outside the European Union",
+            "body": "{host}, {formProvider} (whose servers are in the United States, US-East region) and {mailProvider} may process data in the United States. These transfers rely on the EU–US Data Privacy Framework for companies certified under it, and otherwise on the standard contractual clauses adopted by the European Commission.",
+            "check": "A company’s certification can be checked on <dpf>dataprivacyframework.gov</dpf>."
+        },
+        "rights": {
+            "title": "Your rights",
+            "intro": "Under the General Data Protection Regulation (GDPR) and the French Data Protection Act, you have the right to:",
+            "access": "<strong>Access</strong> — find out whether data about you is processed and get a copy of it;",
+            "rectification": "<strong>Rectification</strong> — have inaccurate or incomplete data corrected;",
+            "erasure": "<strong>Erasure</strong> — have your data deleted, unless it must be kept to meet a legal obligation;",
+            "restriction": "<strong>Restriction</strong> — have the processing of your data temporarily frozen;",
+            "objection": "<strong>Objection</strong> — object at any time, on grounds relating to your situation, to processing based on legitimate interest;",
+            "portability": "<strong>Portability</strong> — receive the data you provided in a structured, commonly used format, or have it sent to another organisation, when the processing is based on steps taken at your request before a contract;",
+            "postMortem": "<strong>Instructions after death</strong> — set instructions on how your data should be kept, erased or communicated after your death (Article 85 of the French Data Protection Act).",
+            "exercise": "To exercise these rights, write to <mailto>{email}</mailto>. {company} answers within one month; that period can be extended by two months for complex requests, in which case you will be told why. Proof of identity may only be requested if there is reasonable doubt about who is making the request."
+        },
+        "complaint": {
+            "title": "Complaints",
+            "body": "If you believe your rights are not being respected, you can lodge a complaint with the CNIL, the French data protection authority: <cnil>cnil.fr/fr/plaintes</cnil>."
+        },
+        "security": {
+            "title": "Security and data breaches",
+            "body": "The site is served over HTTPS only, and the form is sent to {formProvider} over an encrypted connection. Access to the mailbox that receives messages is limited to the people who handle requests.",
+            "breach": "If a personal data breach is likely to put your rights at risk, {company} notifies the CNIL within 72 hours of becoming aware of it and, if the risk is high, informs you directly without undue delay."
+        },
+        "noSale": {
+            "title": "No sale of data",
+            "body": "{company} does not sell your data, does not rent it out and does not use it for advertising. No automated decision or profiling is based on it."
+        },
+        "changes": {
+            "title": "Changes to this policy",
+            "body": "This policy changes when the site or its providers change. The date at the top of the page shows the current version; cookies are described on the <cookies>cookies page</cookies>."
+        }
+    },
+    "Cookies": {
+        "title": "Cookies",
+        "lead": "What the site stores in your browser, and why it shows no consent banner.",
+        "summary": {
+            "title": "In short",
+            "body": "leutheria.co sets a single cookie, to keep the language you chose. It sets no analytics, advertising or social-media cookie and loads no third-party tracker."
+        },
+        "list": {
+            "title": "Cookies used",
+            "caption": "Cookies set by leutheria.co",
+            "name": "Name",
+            "purpose": "Purpose",
+            "provider": "Set by",
+            "duration": "Lifetime",
+            "nextLocale": {
+                "purpose": "Keeps the language you chose (English or French) while you browse, so the site does not switch back to your browser’s language.",
+                "provider": "leutheria.co (first party)",
+                "duration": "Session — deleted when you close your browser"
+            },
+            "note": "It is only set when you switch language, or when the language of the page you open differs from your browser’s. It contains nothing but the language code (en or fr)."
+        },
+        "exempt": {
+            "title": "No consent required",
+            "body": "This cookie is strictly necessary to provide the service you asked for: the site in your language. Under Article 82 of the French Data Protection Act and the CNIL’s guidelines, it is exempt from consent, which is why the site shows no cookie banner."
+        },
+        "thirdParties": {
+            "title": "Third-party services",
+            "body": "Fonts are served from leutheria.co itself, and the pages embed no video, map or social-media widget. The contact form only contacts {formProvider} when you send a message — see the <privacy>privacy policy</privacy>."
+        },
+        "manage": {
+            "title": "Managing cookies",
+            "body": "You can view and delete cookies at any time in your browser’s settings. Blocking this cookie does not break the site: it then follows your browser’s language."
         }
     },
     "NotFound": {

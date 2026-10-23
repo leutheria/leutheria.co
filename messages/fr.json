@@ -12,7 +12,15 @@
         },
         "legal": {
             "title": "Mentions légales",
-            "description": "Mentions légales du site leutheria.co : éditeur, hébergeur, propriété intellectuelle et données personnelles."
+            "description": "Mentions légales du site leutheria.co : éditeur, hébergeur, nom de domaine, propriété intellectuelle et conditions de vente."
+        },
+        "privacy": {
+            "title": "Politique de confidentialité",
+            "description": "Comment Leutheria traite les données personnelles collectées sur leutheria.co : prestataires, durées de conservation et droits RGPD."
+        },
+        "cookies": {
+            "title": "Cookies",
+            "description": "Le seul cookie déposé par leutheria.co, son rôle et pourquoi il ne requiert pas de consentement."
         }
     },
     "Nav": {
@@ -20,7 +28,9 @@
         "contact": "Nous contacter",
         "contactShort": "Contact",
         "legal": "Mentions légales",
-        "languageSwitcher": "Changer de langue"
+        "languageSwitcher": "Changer de langue",
+        "privacy": "Politique de confidentialité",
+        "cookies": "Cookies"
     },
     "Home": {
         "hero": {
@@ -108,12 +118,22 @@
             "responseValue": "Sous 48 heures ouvrées en général."
         }
     },
+    "LegalPages": {
+        "breadcrumbLabel": "Fil d’Ariane",
+        "breadcrumbHome": "Accueil",
+        "breadcrumbSection": "Informations juridiques",
+        "eyebrow": "Informations juridiques",
+        "tabsLabel": "Documents juridiques",
+        "tocTitle": "Sur cette page",
+        "updatedOn": "Dernière mise à jour : {date}",
+        "country": "{code, select, US {États-Unis} FR {France} other {{code}}}"
+    },
     "Legal": {
         "title": "Mentions légales",
         "lead": "Informations légales relatives au site leutheria.co, conformément à la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l’économie numérique.",
-        "updatedOn": "Dernière mise à jour : {date}",
-        "editor": {
+        "identity": {
             "title": "Éditeur du site",
+            "badge": "Identification légale",
             "nameLabel": "Dénomination sociale",
             "formLabel": "Forme juridique",
             "formValue": "Société à responsabilité limitée (SARL)",
@@ -125,34 +145,137 @@
             "vatLabel": "TVA intracommunautaire",
             "apeLabel": "Code APE",
             "apeValue": "{code} — Vente à distance sur catalogue général",
+            "directorLabel": "Directeur de la publication",
+            "directorValue": "{name}, gérant",
             "emailLabel": "Contact"
         },
-        "director": {
-            "title": "Directeur de la publication",
-            "body": "{name}, en qualité de gérant de la société {company}."
-        },
         "host": {
-            "title": "Hébergeur",
-            "body": "Le site est hébergé par {name}, {address}, {country}. Site web : {url}."
+            "title": "Hébergement",
+            "body": "Le site est hébergé par <strong>{name}</strong>, {address}, {country} — <link>{url}</link>.",
+            "cdn": "Les pages sont distribuées par le réseau périphérique (edge network) de Vercel, qui sert de réseau de diffusion de contenu (CDN) au site : des copies des pages sont mises en cache sur des serveurs Vercel proches des visiteurs."
+        },
+        "dns": {
+            "title": "Nom de domaine",
+            "body": "La zone DNS de leutheria.co est gérée par <strong>{name}</strong>, {address}, {country} — <link>{url}</link>. Cloudflare se limite à la résolution du nom de domaine : il n’héberge ni ne relaie les pages du site."
         },
         "intellectualProperty": {
             "title": "Propriété intellectuelle",
             "body": "L’ensemble des éléments composant ce site — textes, images, logos, marques, structure et code — est protégé par le droit d’auteur et le droit des marques. Toute reproduction, représentation, adaptation ou exploitation, totale ou partielle, sans autorisation écrite préalable de {company}, est interdite."
         },
-        "personalData": {
-            "title": "Données personnelles",
-            "body": "Les seules données personnelles collectées sur ce site sont celles que vous transmettez volontairement via le formulaire de contact : nom, adresse e-mail et contenu du message. Elles sont traitées dans le seul but de répondre à votre demande, sur la base de votre consentement, et ne sont jamais cédées ni revendues à des tiers.",
-            "processor": "L’acheminement des messages est assuré par notre prestataire technique d’envoi de formulaires, qui agit en qualité de sous-traitant et ne conserve pas le contenu des messages au-delà de leur transmission.",
-            "retention": "Les échanges sont conservés le temps nécessaire au traitement de votre demande, puis archivés ou supprimés.",
-            "rights": "Conformément au Règlement général sur la protection des données (RGPD) et à la loi Informatique et Libertés, vous disposez d’un droit d’accès, de rectification, d’effacement, de limitation et d’opposition sur vos données. Pour l’exercer, écrivez à {email}. Vous pouvez également introduire une réclamation auprès de la CNIL (www.cnil.fr)."
-        },
-        "cookies": {
-            "title": "Cookies",
-            "body": "Ce site ne dépose aucun cookie publicitaire ni traceur de mesure d’audience. Seuls les cookies strictement nécessaires à son fonctionnement — notamment la mémorisation de la langue choisie — peuvent être utilisés ; ils sont exemptés de consentement préalable."
+        "terms": {
+            "title": "Conditions de vente",
+            "body": "{company} vend exclusivement à des professionnels, sur devis, et ses conditions générales de vente sont transmises avec chaque devis."
         },
         "liability": {
             "title": "Responsabilité",
             "body": "{company} s’efforce d’assurer l’exactitude et la mise à jour des informations publiées sur ce site, sans pouvoir en garantir l’exhaustivité. Le site peut contenir des liens vers des sites tiers dont le contenu n’engage pas la responsabilité de {company}."
+        },
+        "personalData": {
+            "title": "Données personnelles et cookies",
+            "body": "Le traitement des données personnelles par {company} est décrit dans la <privacy>politique de confidentialité</privacy>. Le seul cookie déposé par le site est présenté sur la <cookies>page cookies</cookies>."
+        }
+    },
+    "Privacy": {
+        "title": "Politique de confidentialité",
+        "lead": "Quelles données personnelles leutheria.co collecte, pourquoi, qui les reçoit et combien de temps elles sont conservées. Le site n’a ni compte client, ni newsletter, ni mesure d’audience : le formulaire de contact est le seul endroit où vous transmettez des données.",
+        "labels": {
+            "data": "Données",
+            "purpose": "Finalité",
+            "legalBasis": "Base légale",
+            "recipients": "Destinataires",
+            "retention": "Conservation"
+        },
+        "controller": {
+            "title": "Responsable du traitement",
+            "body": "Le responsable des traitements décrits ci-dessous est <strong>{legalName}</strong>, {legalForm} dont le siège social est situé {address}, immatriculée au RCS de {rcsCity} sous le numéro {siren}.",
+            "contact": "Pour toute question relative à vos données, écrivez à <mailto>{email}</mailto>."
+        },
+        "contactForm": {
+            "title": "Formulaire de contact",
+            "intro": "Lorsque vous envoyez un message via le <contact>formulaire de contact</contact> :",
+            "data": "Votre nom, votre adresse e-mail et votre message. {formProvider}, qui reçoit le formulaire, voit également votre adresse IP lors de la requête.",
+            "purpose": "Répondre à votre message et, le cas échéant, établir et suivre un devis.",
+            "legalBasis": "L’intérêt légitime de {company} à répondre aux personnes qui la contactent (article 6.1.f du RGPD) et, lorsque vous demandez un devis, l’exécution de mesures précontractuelles prises à votre demande (article 6.1.b du RGPD).",
+            "recipients": "Les personnes de {company} chargées de votre demande ; <form>{formProvider}</form>, qui reçoit le formulaire depuis votre navigateur et le transmet par e-mail ; <mail>{mailProvider}</mail>, qui héberge la boîte de réception de {company} où arrive le message. Tous deux agissent en qualité de sous-traitants.",
+            "retention": "Trois ans à compter du dernier échange avec vous, puis suppression. Si l’échange aboutit à une commande, les documents commerciaux correspondants sont conservés pendant les durées imposées par le droit commercial et fiscal.",
+            "providerNote": "D’après sa documentation, {formProvider} transmet les messages par e-mail et supprime tous les deux mois ses journaux serveur, qui peuvent contenir des données personnelles. {company} ne maîtrise pas la durée de conservation propre à ce prestataire : voir <policy>sa politique de confidentialité</policy>."
+        },
+        "hosting": {
+            "title": "Journaux d’hébergement",
+            "intro": "Comme tout hébergeur, {host} enregistre des données techniques à chaque requête d’une page du site, que vous utilisiez le formulaire ou non.",
+            "data": "Adresse IP, identifiant du navigateur (user agent), URL demandée, date et heure, et statut de la réponse.",
+            "purpose": "Distribuer le site, en assurer la sécurité et diagnostiquer les erreurs.",
+            "legalBasis": "L’intérêt légitime de {company} à exploiter un site sûr et disponible (article 6.1.f du RGPD).",
+            "recipients": "<hostLink>{host}</hostLink>, hébergeur du site, en qualité de sous-traitant.",
+            "retention": "Vercel conserve les journaux d’exécution 30 jours au plus, selon l’offre d’hébergement. Il peut conserver plus longtemps certaines données de sécurité, conformément à <policy>sa propre politique de confidentialité</policy>."
+        },
+        "transfers": {
+            "title": "Transferts hors de l’Union européenne",
+            "body": "{host}, {formProvider} (dont les serveurs sont situés aux États-Unis, région US-East) et {mailProvider} peuvent traiter des données aux États-Unis. Ces transferts reposent sur le cadre de protection des données UE–États-Unis (Data Privacy Framework) pour les sociétés certifiées, et à défaut sur les clauses contractuelles types adoptées par la Commission européenne.",
+            "check": "La certification d’une société peut être vérifiée sur <dpf>dataprivacyframework.gov</dpf>."
+        },
+        "rights": {
+            "title": "Vos droits",
+            "intro": "Conformément au Règlement général sur la protection des données (RGPD) et à la loi Informatique et Libertés, vous disposez des droits suivants :",
+            "access": "<strong>Accès</strong> — savoir si des données vous concernant sont traitées et en obtenir une copie ;",
+            "rectification": "<strong>Rectification</strong> — faire corriger des données inexactes ou incomplètes ;",
+            "erasure": "<strong>Effacement</strong> — faire supprimer vos données, sauf si leur conservation est imposée par une obligation légale ;",
+            "restriction": "<strong>Limitation</strong> — faire geler temporairement le traitement de vos données ;",
+            "objection": "<strong>Opposition</strong> — vous opposer à tout moment, pour des raisons tenant à votre situation, à un traitement fondé sur l’intérêt légitime ;",
+            "portability": "<strong>Portabilité</strong> — recevoir les données que vous avez fournies dans un format structuré et couramment utilisé, ou les faire transmettre à un autre organisme, lorsque le traitement repose sur des mesures précontractuelles prises à votre demande ;",
+            "postMortem": "<strong>Directives post mortem</strong> — définir des directives relatives à la conservation, à l’effacement et à la communication de vos données après votre décès (article 85 de la loi Informatique et Libertés).",
+            "exercise": "Pour exercer ces droits, écrivez à <mailto>{email}</mailto>. {company} répond dans un délai d’un mois, qui peut être prolongé de deux mois pour une demande complexe ; vous en êtes alors informé, motifs à l’appui. Un justificatif d’identité ne peut être demandé qu’en cas de doute raisonnable sur l’identité du demandeur."
+        },
+        "complaint": {
+            "title": "Réclamation",
+            "body": "Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la CNIL, l’autorité française de protection des données : <cnil>cnil.fr/fr/plaintes</cnil>."
+        },
+        "security": {
+            "title": "Sécurité et violations de données",
+            "body": "Le site est servi exclusivement en HTTPS, et le formulaire est transmis à {formProvider} par une connexion chiffrée. L’accès à la boîte de réception des messages est limité aux personnes qui traitent les demandes.",
+            "breach": "Si une violation de données personnelles est susceptible d’engendrer un risque pour vos droits, {company} la notifie à la CNIL dans les 72 heures après en avoir pris connaissance et, si le risque est élevé, vous en informe directement dans les meilleurs délais."
+        },
+        "noSale": {
+            "title": "Aucune vente de données",
+            "body": "{company} ne vend pas vos données, ne les loue pas et ne les utilise pas à des fins publicitaires. Aucune décision automatisée ni aucun profilage ne repose sur elles."
+        },
+        "changes": {
+            "title": "Évolution de cette politique",
+            "body": "Cette politique évolue lorsque le site ou ses prestataires changent. La date en haut de page indique la version en vigueur ; les cookies sont décrits sur la <cookies>page cookies</cookies>."
+        }
+    },
+    "Cookies": {
+        "title": "Cookies",
+        "lead": "Ce que le site enregistre dans votre navigateur, et pourquoi il n’affiche pas de bandeau de consentement.",
+        "summary": {
+            "title": "En bref",
+            "body": "leutheria.co dépose un seul cookie, pour conserver la langue choisie. Il ne dépose aucun cookie de mesure d’audience, de publicité ou de réseau social et ne charge aucun traceur tiers."
+        },
+        "list": {
+            "title": "Cookies utilisés",
+            "caption": "Cookies déposés par leutheria.co",
+            "name": "Nom",
+            "purpose": "Finalité",
+            "provider": "Déposé par",
+            "duration": "Durée de vie",
+            "nextLocale": {
+                "purpose": "Conserve la langue choisie (anglais ou français) pendant la navigation, pour que le site ne rebascule pas dans la langue de votre navigateur.",
+                "provider": "leutheria.co (cookie interne)",
+                "duration": "Session — supprimé à la fermeture du navigateur"
+            },
+            "note": "Il n’est déposé que lorsque vous changez de langue, ou lorsque la langue de la page ouverte diffère de celle de votre navigateur. Il ne contient que le code de la langue (en ou fr)."
+        },
+        "exempt": {
+            "title": "Aucun consentement requis",
+            "body": "Ce cookie est strictement nécessaire à la fourniture du service que vous demandez : le site dans votre langue. En application de l’article 82 de la loi Informatique et Libertés et des lignes directrices de la CNIL, il est exempté de consentement ; c’est pourquoi le site n’affiche pas de bandeau cookies."
+        },
+        "thirdParties": {
+            "title": "Services tiers",
+            "body": "Les polices sont servies par leutheria.co lui-même, et les pages n’intègrent ni vidéo, ni carte, ni module de réseau social. Le formulaire de contact ne contacte {formProvider} qu’au moment où vous envoyez un message — voir la <privacy>politique de confidentialité</privacy>."
+        },
+        "manage": {
+            "title": "Gérer les cookies",
+            "body": "Vous pouvez consulter et supprimer les cookies à tout moment dans les réglages de votre navigateur. Bloquer ce cookie n’empêche pas le site de fonctionner : il suit alors la langue de votre navigateur."
         }
     },
     "NotFound": {

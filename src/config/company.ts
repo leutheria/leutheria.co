@@ -39,7 +39,34 @@ export const company = {
         name: 'Vercel Inc.',
         address: '440 N Barranca Avenue #4133, Covina, CA 91723',
         country: 'United States',
+        /** ISO 3166 code, translated by `LegalPages.country` in the catalogues. */
+        countryCode: 'US',
         url: 'https://vercel.com',
+        privacyUrl: 'https://vercel.com/legal/privacy-policy',
+    },
+    /**
+     * DNS of leutheria.co (`dig NS leutheria.co` -> *.ns.cloudflare.com). The A
+     * records point straight at Vercel: Cloudflare resolves the name but neither
+     * hosts nor proxies the site.
+     */
+    dnsProvider: {
+        name: 'Cloudflare, Inc.',
+        address: '101 Townsend Street, San Francisco, CA 94107',
+        country: 'United States',
+        countryCode: 'US',
+        url: 'https://www.cloudflare.com',
+    },
+    /** Receives the contact form straight from the browser and forwards it by email. */
+    formProvider: {
+        name: 'Web3Forms',
+        url: 'https://web3forms.com',
+        privacyUrl: 'https://web3forms.com/privacy',
+    },
+    /** Hosts the mailbox the form lands in (`dig MX leutheria.co` -> aspmx.l.google.com). */
+    mailProvider: {
+        name: 'Google Workspace',
+        url: 'https://workspace.google.com',
+        privacyUrl: 'https://policies.google.com/privacy',
     },
     siteUrl: 'https://leutheria.co',
 } as const
