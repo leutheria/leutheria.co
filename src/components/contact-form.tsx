@@ -61,7 +61,7 @@ export function ContactForm({ accessKey, fallbackEmail }: { accessKey?: string; 
                 body: JSON.stringify({
                     access_key: accessKey,
                     subject: t('emailSubject', { name: values.name }),
-                    from_name: 'arnova.fr',
+                    from_name: 'leutheria.co',
                     // Hidden honeypot: real users never tick it, bots that fill
                     // every field do — Web3Forms then drops the submission.
                     botcheck: data.get('botcheck') !== null,
