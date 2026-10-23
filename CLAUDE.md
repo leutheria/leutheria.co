@@ -11,6 +11,15 @@ Tailwind v4, bilingual EN/FR via next-intl, deployed on Vercel. It replaced a Wo
 
 Read `README.md` first. The points below are the ones that are easy to get wrong.
 
+## Twin site
+
+**arnova.fr** (`/Users/guillaume/Sites/arnova/arnova.fr`, GitHub `arnova-sas`) is built from the same template: same components, layout, header,
+footer, contact form, token names in `globals.css` and checks in `scripts/`. Mirror every layout or
+component change there, so the two sites keep presenting the template the same way (language switch
+`FR | EN`, same form labels, same class names). Only brand content differs: names, colours, copy,
+logo, links (Leutheria's Facebook link, Umami analytics) and the URL structure, which each site
+inherited and must keep.
+
 ## Conventions
 
 - **Package manager is pnpm.** Never npm or yarn. Its version is pinned by `packageManager` in

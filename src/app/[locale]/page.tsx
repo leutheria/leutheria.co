@@ -7,6 +7,7 @@ import { company } from '@/config/company'
 import { Link } from '@/i18n/navigation'
 import type { Locale } from '@/i18n/routing'
 import { buildAlternates } from '@/lib/metadata'
+import { organizationJsonLd, serializeJsonLd } from '@/lib/structured-data'
 
 type PageProps = { params: Promise<{ locale: Locale }> }
 
@@ -31,50 +32,17 @@ export default async function HomePage({ params }: PageProps) {
 
     return (
         <>
-            <OrganizationJsonLd description={t('description')} />
+            <script
+                type="application/ld+json"
+                // biome-ignore lint/security/noDangerouslySetInnerHtml: static JSON-LD built from company.ts, `<` escaped
+                dangerouslySetInnerHTML={{ __html: serializeJsonLd(organizationJsonLd(t('description'))) }}
+            />
             <Hero />
             <Offer />
             <Approach />
             <CompanyFacts />
             <CallToAction />
         </>
-    )
-}
-
-/**
- * `Organization` structured data, built from `company.ts` only. `<` is escaped
- * so no value can close the script tag early.
- */
-function OrganizationJsonLd({ description }: { description: string }) {
-    const organization = {
-        '@context': 'https://schema.org',
-        '@type': 'Organization',
-        '@id': `${company.siteUrl}/#organization`,
-        name: company.name,
-        legalName: company.legalName,
-        url: company.siteUrl,
-        logo: `${company.siteUrl}/apple-icon.png`,
-        description,
-        email: company.email,
-        foundingDate: company.incorporatedOn,
-        vatID: company.vat,
-        identifier: { '@type': 'PropertyValue', propertyID: 'SIREN', value: company.siren.replaceAll(' ', '') },
-        address: {
-            '@type': 'PostalAddress',
-            streetAddress: company.address.street,
-            postalCode: company.address.postalCode,
-            addressLocality: company.address.city,
-            addressCountry: 'FR',
-        },
-        sameAs: [company.facebookUrl],
-    }
-
-    return (
-        <script
-            type="application/ld+json"
-            // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD must be inlined; `<` is escaped above.
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(organization).replace(/</g, '\\u003c') }}
-        />
     )
 }
 

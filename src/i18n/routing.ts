@@ -1,7 +1,8 @@
 import { defineRouting } from 'next-intl/routing'
 
 export const routing = defineRouting({
-    locales: ['en', 'fr'],
+    /** Order is display order: the language switcher reads `FR | EN` on both twin sites. */
+    locales: ['fr', 'en'],
     /**
      * English is the default and unprefixed, French lives under `/fr`. This is
      * not a stylistic choice: it reproduces the URL structure the WordPress site
