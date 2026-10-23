@@ -9,7 +9,7 @@ export function absoluteUrl(href: AppPathname, locale: Locale) {
 /**
  * Canonical + hreflang block for a page. Search engines need every locale of a
  * page to point at each other, and `x-default` to name the version served when
- * no language matches — here, French.
+ * no language matches — here, English, the unprefixed default locale.
  */
 export function buildAlternates(href: AppPathname, locale: Locale) {
     return {

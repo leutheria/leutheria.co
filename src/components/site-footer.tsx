@@ -15,7 +15,9 @@ export function SiteFooter() {
                     <div className="max-w-sm">
                         <div className="flex items-center gap-2.5">
                             <LogoMark className="h-8 w-8" />
-                            <p className="font-display text-lg font-bold tracking-[0.18em] text-foreground">ARNOVA</p>
+                            <p className="font-display text-lg font-bold tracking-tight text-foreground">
+                                {company.name}
+                            </p>
                         </div>
                         <p className="mt-3 text-sm leading-relaxed text-muted">{t('tagline')}</p>
                     </div>
@@ -29,6 +31,12 @@ export function SiteFooter() {
                         </Link>
                         <Link href="/legal-mentions" className="text-muted transition-colors hover:text-accent">
                             {tNav('legal')}
+                        </Link>
+                        <Link href="/privacy-policy" className="text-muted transition-colors hover:text-accent">
+                            {tNav('privacy')}
+                        </Link>
+                        <Link href="/cookies" className="text-muted transition-colors hover:text-accent">
+                            {tNav('cookies')}
                         </Link>
                         <a href={`mailto:${company.email}`} className="text-muted transition-colors hover:text-accent">
                             {company.email}

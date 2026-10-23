@@ -1,14 +1,14 @@
 import type { Metadata } from 'next'
-import { useFormatter, useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
-import type { ReactNode } from 'react'
-import { Container } from '@/components/container'
+import { LegalFacts, LegalIdentityHeading, LegalPage } from '@/components/legal/legal-page'
+import { externalLink, internalLink, legalLinkClass, strong } from '@/components/legal/rich-text'
 import { company, formattedAddress } from '@/config/company'
 import type { Locale } from '@/i18n/routing'
 import { buildAlternates } from '@/lib/metadata'
 
 /** Bump this whenever the wording below changes. */
-const LEGAL_UPDATED_ON = new Date('2026-09-18T00:00:00Z')
+const LEGAL_UPDATED_ON = new Date('2026-10-23T00:00:00Z')
 
 type PageProps = { params: Promise<{ locale: Locale }> }
 
@@ -25,73 +25,98 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
 }
 
-export default async function LegalPage({ params }: PageProps) {
+export default async function LegalMentionsPage({ params }: PageProps) {
     const { locale } = await params
     setRequestLocale(locale)
 
-    return (
-        <Container className="py-20 sm:py-28">
-            <LegalContent />
-        </Container>
-    )
+    return <LegalMentions />
 }
 
-function LegalContent() {
+function LegalMentions() {
     const t = useTranslations('Legal')
-    const format = useFormatter()
+    const tShared = useTranslations('LegalPages')
 
     return (
-        <article className="max-w-3xl">
-            <h1 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">{t('title')}</h1>
-            <p className="mt-5 text-lg leading-relaxed text-muted">{t('lead')}</p>
-            <p className="mt-2 text-sm text-muted">
-                {t('updatedOn', { date: format.dateTime(LEGAL_UPDATED_ON, { dateStyle: 'long' }) })}
-            </p>
-
-            <Editor />
-
-            <Section title={t('director.title')}>
-                <p>{t('director.body', { name: company.publicationDirector, company: company.name })}</p>
-            </Section>
-
-            <Section title={t('host.title')}>
-                <p>
-                    {t('host.body', {
-                        name: company.host.name,
-                        address: company.host.address,
-                        country: company.host.country,
-                        url: company.host.url,
-                    })}
-                </p>
-            </Section>
-
-            <Section title={t('intellectualProperty.title')}>
-                <p>{t('intellectualProperty.body', { company: company.name })}</p>
-            </Section>
-
-            <Section title={t('personalData.title')}>
-                <p>{t('personalData.body')}</p>
-                <p>{t('personalData.processor')}</p>
-                <p>{t('personalData.retention')}</p>
-                <p>{t('personalData.rights', { email: company.email })}</p>
-            </Section>
-
-            <Section title={t('cookies.title')}>
-                <p>{t('cookies.body')}</p>
-            </Section>
-
-            <Section title={t('liability.title')}>
-                <p>{t('liability.body', { company: company.name })}</p>
-            </Section>
-        </article>
+        <LegalPage
+            current="/legal-mentions"
+            title={t('title')}
+            lead={t('lead')}
+            updatedOn={LEGAL_UPDATED_ON}
+            identity={{ id: 'publisher', title: t('identity.title'), content: <Identity /> }}
+            sections={[
+                {
+                    id: 'hosting',
+                    title: t('host.title'),
+                    children: (
+                        <>
+                            <p>
+                                {t.rich('host.body', {
+                                    name: company.host.name,
+                                    address: company.host.address,
+                                    country: tShared('country', { code: company.host.countryCode }),
+                                    url: company.host.url.replace('https://', ''),
+                                    strong,
+                                    link: externalLink(company.host.url),
+                                })}
+                            </p>
+                            <p>{t('host.cdn')}</p>
+                        </>
+                    ),
+                },
+                {
+                    id: 'domain-name',
+                    title: t('dns.title'),
+                    children: (
+                        <p>
+                            {t.rich('dns.body', {
+                                name: company.dnsProvider.name,
+                                address: company.dnsProvider.address,
+                                country: tShared('country', { code: company.dnsProvider.countryCode }),
+                                url: company.dnsProvider.url.replace('https://', ''),
+                                strong,
+                                link: externalLink(company.dnsProvider.url),
+                            })}
+                        </p>
+                    ),
+                },
+                {
+                    id: 'intellectual-property',
+                    title: t('intellectualProperty.title'),
+                    children: <p>{t('intellectualProperty.body', { company: company.name })}</p>,
+                },
+                {
+                    id: 'terms-of-sale',
+                    title: t('terms.title'),
+                    children: <p>{t('terms.body', { company: company.name })}</p>,
+                },
+                {
+                    id: 'liability',
+                    title: t('liability.title'),
+                    children: <p>{t('liability.body', { company: company.name })}</p>,
+                },
+                {
+                    id: 'personal-data',
+                    title: t('personalData.title'),
+                    children: (
+                        <p>
+                            {t.rich('personalData.body', {
+                                company: company.name,
+                                privacy: internalLink('/privacy-policy'),
+                                cookies: internalLink('/cookies'),
+                            })}
+                        </p>
+                    ),
+                },
+            ]}
+        />
     )
 }
 
-function Editor() {
-    const t = useTranslations('Legal.editor')
+function Identity() {
+    const t = useTranslations('Legal.identity')
 
     const rows = [
-        { label: t('nameLabel'), value: company.legalName },
+        { label: t('nameLabel'), value: <span className="font-semibold">{company.legalName}</span> },
         { label: t('formLabel'), value: t('formValue') },
         { label: t('capitalLabel'), value: company.capital },
         { label: t('addressLabel'), value: formattedAddress },
@@ -99,38 +124,23 @@ function Editor() {
         { label: t('siretLabel'), value: company.siret },
         { label: t('vatLabel'), value: company.vat },
         { label: t('apeLabel'), value: t('apeValue', { code: company.ape }) },
+        { label: t('directorLabel'), value: t('directorValue', { name: company.publicationDirector }) },
+        {
+            label: t('emailLabel'),
+            value: (
+                <a href={`mailto:${company.email}`} className={legalLinkClass}>
+                    {company.email}
+                </a>
+            ),
+        },
     ]
 
     return (
-        <Section title={t('title')}>
-            <dl className="not-prose grid gap-px overflow-hidden rounded-2xl border border-border bg-border">
-                {rows.map((row) => (
-                    <div key={row.label} className="grid gap-1 bg-background p-4 sm:grid-cols-[200px_1fr] sm:gap-4">
-                        <dt className="text-xs font-semibold uppercase tracking-widest text-muted">{row.label}</dt>
-                        <dd className="text-sm text-foreground">{row.value}</dd>
-                    </div>
-                ))}
-                <div className="grid gap-1 bg-background p-4 sm:grid-cols-[200px_1fr] sm:gap-4">
-                    <dt className="text-xs font-semibold uppercase tracking-widest text-muted">{t('emailLabel')}</dt>
-                    <dd className="text-sm">
-                        <a
-                            href={`mailto:${company.email}`}
-                            className="text-foreground underline-offset-4 hover:text-accent hover:underline"
-                        >
-                            {company.email}
-                        </a>
-                    </dd>
-                </div>
-            </dl>
-        </Section>
-    )
-}
-
-function Section({ title, children }: { title: string; children: ReactNode }) {
-    return (
-        <section className="mt-12">
-            <h2 className="font-display text-xl font-bold tracking-tight text-foreground">{title}</h2>
-            <div className="mt-4 flex flex-col gap-4 text-sm leading-relaxed text-muted">{children}</div>
-        </section>
+        <>
+            <LegalIdentityHeading id="publisher" title={t('title')} badge={t('badge')} />
+            <div className="mt-6">
+                <LegalFacts rows={rows} columns={2} />
+            </div>
+        </>
     )
 }

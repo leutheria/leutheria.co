@@ -20,17 +20,16 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
 /**
  * Client-side gate before a submission is sent to Web3Forms.
  *
- * TODO(arnova): tune the anti-spam / message-quality policy below.
- *
- * This is a genuine trade-off, not boilerplate — every rule you add filters
- * junk but also turns away real prospects:
+ * The anti-spam / message-quality policy below is a genuine trade-off, not
+ * boilerplate — every rule you add filters junk but also turns away real
+ * prospects:
  *   - `MIN_MESSAGE_LENGTH` at 10 lets "Call me back" through; at 80 it forces a
  *     real brief but loses the visitor who just wants a quick reply.
  *   - You could require a minimum word count instead of a character count, so
  *     "aaaaaaaaaaaaaaaa" does not pass.
  *   - You could reject messages containing URLs (classic SEO-spam signature),
- *     at the cost of prospects who legitimately want to link to their site —
- *     which, for a company that buys and operates websites, is common.
+ *     at the cost of business customers who legitimately link to a product
+ *     reference or a supplier catalogue when asking for a quote.
  *
  * Web3Forms already runs its own spam filtering plus the hidden `botcheck`
  * honeypot, so this layer is about message *quality*, not bot defence.
