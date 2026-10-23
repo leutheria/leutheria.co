@@ -200,9 +200,9 @@
             "data": "Your name, email address and message. {formProvider}, which receives the form, also sees your IP address as part of the request.",
             "purpose": "Answering your message and, where relevant, preparing and following up a quote.",
             "legalBasis": "The legitimate interest of {company} in answering the people who contact it (Article 6(1)(f) GDPR) and, when you ask for a quote, steps taken at your request before entering into a contract (Article 6(1)(b) GDPR).",
-            "recipients": "The {company} staff handling your request; <form>{formProvider}</form>, which receives the form from your browser and forwards it by email; <mail>{mailProvider}</mail>, which hosts the {company} mailbox the message lands in. Both act as processors.",
+            "recipients": "The {company} staff handling your request; <form>{formProvider}</form>, which receives the form from your browser and forwards it by email; the anti-spam services CleanTalk and Akismet, to which {formProvider} may pass your IP address and email address; <mail>{mailProvider}</mail>, which hosts the {company} mailbox the message lands in. {formProvider} and {mailProvider} act as processors.",
             "retention": "Three years from the last exchange with you, then deleted. If the exchange leads to an order, the related commercial documents are kept for the periods required by commercial and tax law.",
-            "providerNote": "According to its documentation, {formProvider} forwards submissions by email and deletes its server logs, which may contain personal data, every two months. {company} does not control that provider’s own retention: see <policy>its privacy policy</policy>."
+            "providerNote": "{formProvider} stores submissions in a database hosted on Amazon Web Services (AWS) and deletes them automatically at most three years after they are sent, independently of the retention period above. See <policy>its privacy policy</policy>."
         },
         "hosting": {
             "title": "Hosting logs",
@@ -215,7 +215,7 @@
         },
         "transfers": {
             "title": "Transfers outside the European Union",
-            "body": "{host}, {formProvider} (whose servers are in the United States, US-East region) and {mailProvider} may process data in the United States. These transfers rely on the EU–US Data Privacy Framework for companies certified under it, and otherwise on the standard contractual clauses adopted by the European Commission.",
+            "body": "{host} and {mailProvider} may process data in the United States; these transfers rely on the EU–US Data Privacy Framework for companies certified under it, and otherwise on the standard contractual clauses adopted by the European Commission. {formProvider}, which operates from India and hosts its data on AWS in the United States, frames transfers out of the European Union with the European Commission’s standard contractual clauses, as set out in its data processing agreement.",
             "check": "A company’s certification can be checked on <dpf>dataprivacyframework.gov</dpf>."
         },
         "rights": {

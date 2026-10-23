@@ -200,9 +200,9 @@
             "data": "Votre nom, votre adresse e-mail et votre message. {formProvider}, qui reçoit le formulaire, voit également votre adresse IP lors de la requête.",
             "purpose": "Répondre à votre message et, le cas échéant, établir et suivre un devis.",
             "legalBasis": "L’intérêt légitime de {company} à répondre aux personnes qui la contactent (article 6.1.f du RGPD) et, lorsque vous demandez un devis, l’exécution de mesures précontractuelles prises à votre demande (article 6.1.b du RGPD).",
-            "recipients": "Les personnes de {company} chargées de votre demande ; <form>{formProvider}</form>, qui reçoit le formulaire depuis votre navigateur et le transmet par e-mail ; <mail>{mailProvider}</mail>, qui héberge la boîte de réception de {company} où arrive le message. Tous deux agissent en qualité de sous-traitants.",
+            "recipients": "Les personnes de {company} chargées de votre demande ; <form>{formProvider}</form>, qui reçoit le formulaire depuis votre navigateur et le transmet par e-mail ; les services anti-spam CleanTalk et Akismet, auxquels {formProvider} peut transmettre votre adresse IP et votre adresse e-mail ; <mail>{mailProvider}</mail>, qui héberge la boîte de réception de {company} où arrive le message. {formProvider} et {mailProvider} agissent en qualité de sous-traitants.",
             "retention": "Trois ans à compter du dernier échange avec vous, puis suppression. Si l’échange aboutit à une commande, les documents commerciaux correspondants sont conservés pendant les durées imposées par le droit commercial et fiscal.",
-            "providerNote": "D’après sa documentation, {formProvider} transmet les messages par e-mail et supprime tous les deux mois ses journaux serveur, qui peuvent contenir des données personnelles. {company} ne maîtrise pas la durée de conservation propre à ce prestataire : voir <policy>sa politique de confidentialité</policy>."
+            "providerNote": "{formProvider} conserve les messages dans une base de données hébergée chez Amazon Web Services (AWS) et les supprime automatiquement trois ans au plus après leur envoi, indépendamment de la durée de conservation ci-dessus. Voir <policy>sa politique de confidentialité</policy>."
         },
         "hosting": {
             "title": "Journaux d’hébergement",
@@ -215,7 +215,7 @@
         },
         "transfers": {
             "title": "Transferts hors de l’Union européenne",
-            "body": "{host}, {formProvider} (dont les serveurs sont situés aux États-Unis, région US-East) et {mailProvider} peuvent traiter des données aux États-Unis. Ces transferts reposent sur le cadre de protection des données UE–États-Unis (Data Privacy Framework) pour les sociétés certifiées, et à défaut sur les clauses contractuelles types adoptées par la Commission européenne.",
+            "body": "{host} et {mailProvider} peuvent traiter des données aux États-Unis ; ces transferts reposent sur le cadre de protection des données UE–États-Unis (Data Privacy Framework) pour les sociétés certifiées, et à défaut sur les clauses contractuelles types adoptées par la Commission européenne. {formProvider}, qui opère depuis l’Inde et héberge ses données chez AWS aux États-Unis, encadre les transferts hors de l’Union européenne par les clauses contractuelles types de la Commission européenne, comme le prévoit son accord de traitement des données (DPA).",
             "check": "La certification d’une société peut être vérifiée sur <dpf>dataprivacyframework.gov</dpf>."
         },
         "rights": {
