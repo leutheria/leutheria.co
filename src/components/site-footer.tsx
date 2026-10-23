@@ -32,6 +32,12 @@ export function SiteFooter() {
                         <Link href="/legal-mentions" className="text-muted transition-colors hover:text-accent">
                             {tNav('legal')}
                         </Link>
+                        <Link href="/privacy-policy" className="text-muted transition-colors hover:text-accent">
+                            {tNav('privacy')}
+                        </Link>
+                        <Link href="/cookies" className="text-muted transition-colors hover:text-accent">
+                            {tNav('cookies')}
+                        </Link>
                         <a href={`mailto:${company.email}`} className="text-muted transition-colors hover:text-accent">
                             {company.email}
                         </a>

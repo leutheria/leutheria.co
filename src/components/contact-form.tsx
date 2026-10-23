@@ -3,6 +3,7 @@
 import clsx from 'clsx'
 import { useTranslations } from 'next-intl'
 import { type FormEvent, useId, useState } from 'react'
+import { Link } from '@/i18n/navigation'
 import { type ContactFormErrors, type ContactFormValues, validateContactForm } from '@/lib/contact-form'
 import { buttonStyles } from './button-styles'
 
@@ -125,7 +126,18 @@ export function ContactForm({ accessKey, fallbackEmail }: { accessKey?: string; 
                 )}
             </div>
 
-            <p className="text-xs leading-relaxed text-muted">{t('privacyNotice')}</p>
+            <p className="text-xs leading-relaxed text-muted">
+                {t.rich('privacyNotice', {
+                    privacy: (chunks) => (
+                        <Link
+                            href="/privacy-policy"
+                            className="font-medium text-accent underline underline-offset-4 hover:text-accent-hover"
+                        >
+                            {chunks}
+                        </Link>
+                    ),
+                })}
+            </p>
         </form>
     )
 }
