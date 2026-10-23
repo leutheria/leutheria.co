@@ -47,6 +47,8 @@ function PrivacyPolicy() {
         host: company.host.name,
         formProvider: company.formProvider.name,
         mailProvider: company.mailProvider.name,
+        analytics: company.analytics.name,
+        analyticsOperator: company.analytics.operator,
     }
 
     return (
@@ -123,6 +125,25 @@ function PrivacyPolicy() {
                                 retention={t.rich('hosting.retention', {
                                     policy: externalLink(company.host.privacyUrl),
                                 })}
+                            />
+                        </>
+                    ),
+                },
+                {
+                    id: 'audience',
+                    title: t('audience.title'),
+                    children: (
+                        <>
+                            <p>{t('audience.intro', providers)}</p>
+                            <ProcessingFacts
+                                data={t('audience.data')}
+                                purpose={t('audience.purpose')}
+                                legalBasis={t('audience.legalBasis', providers)}
+                                recipients={t.rich('audience.recipients', {
+                                    ...providers,
+                                    umami: externalLink(company.analytics.url),
+                                })}
+                                retention={t('audience.retention')}
                             />
                         </>
                     ),

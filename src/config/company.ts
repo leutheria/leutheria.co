@@ -68,6 +68,18 @@ export const company = {
         url: 'https://workspace.google.com',
         privacyUrl: 'https://policies.google.com/privacy',
     },
+    /**
+     * Audience measurement: Umami, self-hosted by SILARHI on its own server (OVH, France). The script loads from a
+     * subdomain of the site, proxied by Cloudflare to that server, which serves only the tracker and its endpoint.
+     * Cookieless: nothing is stored in the browser.
+     */
+    analytics: {
+        name: 'Umami',
+        operator: 'SILARHI',
+        url: 'https://umami.is',
+        scriptUrl: 'https://analytics.leutheria.co/script.js',
+        websiteId: '18e509cf-cb2d-4b22-a5ac-6b8f5fed6d60',
+    },
     siteUrl: 'https://leutheria.co',
 } as const
 
