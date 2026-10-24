@@ -15,6 +15,7 @@ legal pages (legal notice, privacy policy, cookies). It replaces the previous Wo
 | Styling       | Tailwind CSS v4 (CSS-first `@theme` tokens) |
 | i18n          | next-intl 4 (`en` default, `fr`)            |
 | Contact form  | Web3Forms (no backend, no server secret)    |
+| Analytics     | Umami, self-hosted by SILARHI (cookieless)  |
 | Lint / format | Biome (JS/TS/JSON) + Prettier (CSS/MD/YAML) |
 | Hosting       | Vercel                                      |
 
@@ -106,9 +107,11 @@ the French public registry (INSEE / RNE) for SIREN **891978819**. The intra-comm
 number is derived from the SIREN: `key = (12 + 3 × (SIREN mod 97)) mod 97`.
 
 The third parties the legal pages name — host (Vercel), DNS (Cloudflare), form
-provider (Web3Forms) and mailbox (Google Workspace) — are listed there too. Re-check them
-when the infrastructure changes: `dig +short NS leutheria.co` (Cloudflare),
-`dig +short leutheria.co` (Vercel IPs, so Cloudflare does not proxy) and
+provider (Web3Forms), mailbox (Google Workspace) and audience measurement (Umami, run by
+SILARHI on its own server, with Cloudflare proxying the analytics host) — are listed there
+too. Re-check them when the infrastructure changes: `dig +short NS leutheria.co`
+(Cloudflare), `dig +short leutheria.co` (Vercel IPs, so Cloudflare does not proxy the
+site), `dig +short analytics.leutheria.co` (Cloudflare IPs: that host _is_ proxied) and
 `dig +short MX leutheria.co` (Google).
 
 Each legal page carries its own "last updated" date: `LEGAL_UPDATED_ON`,
@@ -118,6 +121,29 @@ wording changes. The cookies page lists every cookie the site sets (today only
 next-intl's `NEXT_LOCALE`, a session cookie): update it if `localeCookie` in
 `src/i18n/routing.ts` changes or a new cookie appears. `sitemap.ts` likewise has a fixed
 `CONTENT_UPDATED_ON` to bump when the indexable pages change.
+
+## Analytics
+
+Visits are counted with [Umami](https://umami.is), self-hosted by SILARHI.
+`company.analytics` holds the `scriptUrl` (`https://analytics.leutheria.co/script.js`, a
+subdomain Cloudflare proxies to SILARHI's server, which serves only the tracker and its
+`/api/send` endpoint) and the `websiteId`. `src/app/[locale]/layout.tsx` loads the script
+on every page with `next/script`.
+
+- `data-domains="leutheria.co"` makes the tracker ignore every other hostname, so
+  `pnpm dev` and Vercel preview deployments send nothing. Keep it on the tag.
+- The tracker sets no cookie and writes nothing to the browser, but reads
+  `localStorage['umami.disabled']` (its opt-out switch) before every event. The privacy
+  policy (audience measurement, transfers) and the cookies page (third-party services)
+  describe exactly that: update them, and their `*_UPDATED_ON`, if the tracker's host,
+  attributes (`data-do-not-track`, `data-performance`…) or behaviour change.
+- No custom event is tracked yet. To add one, mark the element with tool-agnostic
+  attributes — `data-analytics-event="<kebab-name>"` plus `data-analytics-<prop>="<value>"`
+  for its properties — read by a delegated click listener in a single analytics module,
+  the only code that calls `window.umami.track()`. Reuse the event names of the other
+  SILARHI sites (`contact-form`, `contact-direct`…). Never use Umami's own
+  `data-umami-event*` attributes: they tie the markup to the tool, and Umami cancels
+  clicks on such links to re-navigate itself, which forces a full reload in Next.js.
 
 ## Brand
 

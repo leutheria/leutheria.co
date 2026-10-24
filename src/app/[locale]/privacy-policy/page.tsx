@@ -4,12 +4,12 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import type { ReactNode } from 'react'
 import { LegalFacts, LegalPage } from '@/components/legal/legal-page'
 import { externalLink, internalLink, mailLink, strong } from '@/components/legal/rich-text'
-import { company, formattedAddress } from '@/config/company'
+import { analyticsHost, company, formattedAddress } from '@/config/company'
 import type { Locale } from '@/i18n/routing'
 import { buildAlternates } from '@/lib/metadata'
 
 /** Bump this whenever the wording below, or a provider it names, changes. */
-const PRIVACY_UPDATED_ON = new Date('2026-10-23T00:00:00Z')
+const PRIVACY_UPDATED_ON = new Date('2026-10-24T00:00:00Z')
 
 const CNIL_COMPLAINT_URL = 'https://www.cnil.fr/fr/plaintes'
 const DPF_URL = 'https://www.dataprivacyframework.gov/list'
@@ -49,6 +49,9 @@ function PrivacyPolicy() {
         mailProvider: company.mailProvider.name,
         analytics: company.analytics.name,
         analyticsOperator: company.analytics.operator,
+        analyticsHost,
+        // Proxies the analytics host (the site itself is DNS only).
+        proxy: company.dnsProvider.name,
     }
 
     return (
