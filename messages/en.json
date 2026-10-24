@@ -29,11 +29,10 @@
     },
     "Nav": {
         "home": "Home",
-        "contact": "Contact us",
-        "contactShort": "Contact",
+        "contact": "Contact",
         "legal": "Legal notice",
         "languageSwitcher": "Change language",
-        "privacy": "Privacy policy",
+        "privacy": "Privacy",
         "cookies": "Cookies"
     },
     "Home": {
@@ -96,9 +95,9 @@
         "title": "Contact us",
         "lead": "Need a quote, want to discuss a partnership, or something else entirely? Send us a message and we will come back to you quickly.",
         "fields": {
-            "name": "Your name",
-            "email": "Your email",
-            "message": "Your message"
+            "name": "Name",
+            "email": "Email address",
+            "message": "Message"
         },
         "submit": "Send message",
         "submitting": "Sending…",

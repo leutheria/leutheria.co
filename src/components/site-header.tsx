@@ -15,12 +15,12 @@ export function SiteHeader() {
 
                 <div className="flex items-center gap-3">
                     <LocaleSwitcher label={t('languageSwitcher')} />
-                    {/* Short label + tighter padding: the full "Nous contacter" wraps at 375px. */}
+                    {/* Slightly tighter than the page-level CTAs so it fits the 64px bar; never wraps at 375px. */}
                     <Link
                         href="/contact"
                         className={`${buttonStyles.primary} whitespace-nowrap px-4 py-2 text-xs sm:text-sm`}
                     >
-                        {t('contactShort')}
+                        {t('contact')}
                     </Link>
                 </div>
             </Container>

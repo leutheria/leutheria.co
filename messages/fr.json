@@ -29,11 +29,10 @@
     },
     "Nav": {
         "home": "Accueil",
-        "contact": "Nous contacter",
-        "contactShort": "Contact",
+        "contact": "Contact",
         "legal": "Mentions légales",
         "languageSwitcher": "Changer de langue",
-        "privacy": "Politique de confidentialité",
+        "privacy": "Confidentialité",
         "cookies": "Cookies"
     },
     "Home": {
@@ -96,9 +95,9 @@
         "title": "Nous contacter",
         "lead": "Un devis, un partenariat, ou tout autre sujet ? Écrivez-nous : le formulaire arrive directement dans notre boîte de réception.",
         "fields": {
-            "name": "Votre nom",
-            "email": "Votre adresse e-mail",
-            "message": "Votre message"
+            "name": "Nom",
+            "email": "Adresse e-mail",
+            "message": "Message"
         },
         "submit": "Envoyer le message",
         "submitting": "Envoi en cours…",

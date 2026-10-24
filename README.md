@@ -131,12 +131,11 @@ block; inside an inline SVG those names are global and would collide, so they we
 resolved to literal `fill` attributes. Because the mark carries its own colours and
 reads on both backgrounds, there is no dark-mode variant to keep in sync.
 
-| File                          | Purpose                                                                  |
-| ----------------------------- | ------------------------------------------------------------------------ |
-| `src/app/icon.svg`            | Favicon — the vector mark, crisp at every size                           |
-| `src/app/apple-icon.png`      | iOS home screen; composited on white (iOS renders transparency as black) |
-| `src/app/opengraph-image.png` | 1200×630 link-preview card                                               |
-| `src/app/twitter-image.png`   | Same card, declared separately for X                                     |
+| File                     | Purpose                                                                                  |
+| ------------------------ | ---------------------------------------------------------------------------------------- |
+| `src/app/icon.svg`       | Favicon — the vector mark, crisp at every size                                           |
+| `src/app/apple-icon.png` | iOS home screen; composited on white (iOS renders transparency as black)                 |
+| `public/og-image.png`    | 1200×630 link-preview card for Open Graph and X (`socialImage` in `src/lib/metadata.ts`) |
 
 `pnpm check:contrast` parses the tokens out of `globals.css` and fails CI if any
 foreground/background pair drops below WCAG AA (4.5:1).
