@@ -217,13 +217,13 @@
             "intro": "La fréquentation du site est mesurée avec {analytics}, un outil libre que {analyticsOperator} héberge lui-même. Il ne dépose aucun cookie et n’enregistre rien dans votre navigateur.",
             "data": "Pages vues, site d’où vous venez, type d’appareil, navigateur, système d’exploitation, langue, taille d’écran, ainsi que le pays et la ville déduits de votre adresse IP. L’adresse IP sert aussi à distinguer les visites, puis n’est pas conservée.",
             "purpose": "Connaître la fréquentation du site et les pages consultées, pour l’améliorer.",
-            "legalBasis": "L’intérêt légitime de {company} à connaître la fréquentation de son site (article 6.1.f du RGPD). Rien n’étant lu ni enregistré dans votre navigateur, aucun consentement n’est requis.",
-            "recipients": "<umami>{analyticsOperator}</umami>, qui exploite l’instance {analytics} sur son propre serveur en France (OVH), en qualité de sous-traitant ; Cloudflare, par lequel transitent les requêtes vers analytics.leutheria.co. Rien n’est transmis à un autre tiers.",
+            "legalBasis": "L’intérêt légitime de {company} à connaître la fréquentation de son site (article 6.1.f du RGPD). Le traceur n’enregistre rien dans votre navigateur, mais lit avant chaque mesure un réglage du stockage local, umami.disabled, qui désactive la mesure lorsqu’il est défini. {company} s’appuie sur l’exemption de consentement que la CNIL accorde à la mesure d’audience limitée à la production de statistiques anonymes pour le seul éditeur du site (article 82 de la loi Informatique et Libertés) : c’est pourquoi aucun consentement ne vous est demandé.",
+            "recipients": "<umami>{analyticsOperator}</umami>, qui exploite l’instance {analytics} sur son propre serveur en France (OVH), en qualité de sous-traitant ; {proxy}, par lequel transitent les requêtes vers {analyticsHost} avant d’atteindre ce serveur, en qualité de sous-traitant. Rien n’est transmis à un autre tiers.",
             "retention": "Statistiques conservées tant que le site existe, sans adresse IP ni donnée permettant de vous identifier directement."
         },
         "transfers": {
             "title": "Transferts hors de l’Union européenne",
-            "body": "{host} et {mailProvider} peuvent traiter des données aux États-Unis ; ces transferts reposent sur le cadre de protection des données UE–États-Unis (Data Privacy Framework) pour les sociétés certifiées, et à défaut sur les clauses contractuelles types adoptées par la Commission européenne. {formProvider}, qui opère depuis l’Inde et héberge ses données chez AWS aux États-Unis, encadre les transferts hors de l’Union européenne par les clauses contractuelles types de la Commission européenne, comme le prévoit son accord de traitement des données (DPA).",
+            "body": "{host}, {mailProvider} et {proxy}, par lequel transite la mesure d’audience, peuvent traiter des données aux États-Unis ; ces transferts reposent sur le cadre de protection des données UE–États-Unis (Data Privacy Framework) pour les sociétés certifiées, et à défaut sur les clauses contractuelles types adoptées par la Commission européenne. {formProvider}, qui opère depuis l’Inde et héberge ses données chez AWS aux États-Unis, encadre les transferts hors de l’Union européenne par les clauses contractuelles types de la Commission européenne, comme le prévoit son accord de traitement des données (DPA).",
             "check": "La certification d’une société peut être vérifiée sur <dpf>dataprivacyframework.gov</dpf>."
         },
         "rights": {
@@ -283,7 +283,7 @@
         },
         "thirdParties": {
             "title": "Services tiers",
-            "body": "Les polices sont servies par leutheria.co lui-même, et les pages n’intègrent ni vidéo, ni carte, ni module de réseau social. Le formulaire de contact ne contacte {formProvider} qu’au moment où vous envoyez un message — voir la <privacy>politique de confidentialité</privacy>."
+            "body": "Les polices sont servies par leutheria.co lui-même, et les pages n’intègrent ni vidéo, ni carte, ni module de réseau social. Chaque page charge depuis {analyticsHost} le script de mesure d’audience {analytics}, exploité par {analyticsOperator} : il ne dépose aucun cookie et lit seulement un réglage du stockage local, umami.disabled, qui le désactive. Le formulaire de contact ne contacte {formProvider} qu’au moment où vous envoyez un message. Les deux sont décrits dans la <privacy>politique de confidentialité</privacy>."
         },
         "manage": {
             "title": "Gérer les cookies",
