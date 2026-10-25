@@ -70,8 +70,9 @@ export const company = {
     },
     /**
      * Audience measurement: Umami, self-hosted by SILARHI on its own server (OVH, France). The script loads from a
-     * subdomain of the site, proxied by Cloudflare to that server, which serves only the tracker and its endpoint.
-     * Cookieless: nothing is stored in the browser.
+     * subdomain of the site, proxied by `dnsProvider` (Cloudflare) to that server, which serves only the tracker and
+     * its endpoint. Cookieless and writes nothing to the browser, but reads `localStorage['umami.disabled']` (its
+     * opt-out switch) before every event: the privacy and cookies pages say so.
      */
     analytics: {
         name: 'Umami',
@@ -84,3 +85,6 @@ export const company = {
 } as const
 
 export const formattedAddress = `${company.address.street}, ${company.address.postalCode} ${company.address.city}, ${company.address.country}`
+
+/** Host the tracker loads from and reports to, as the legal pages name it. */
+export const analyticsHost = new URL(company.analytics.scriptUrl).host

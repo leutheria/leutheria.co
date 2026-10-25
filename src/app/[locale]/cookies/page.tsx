@@ -3,12 +3,12 @@ import { useTranslations } from 'next-intl'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { LegalPage } from '@/components/legal/legal-page'
 import { internalLink } from '@/components/legal/rich-text'
-import { company } from '@/config/company'
+import { analyticsHost, company } from '@/config/company'
 import type { Locale } from '@/i18n/routing'
 import { buildAlternates } from '@/lib/metadata'
 
 /** Bump this whenever the wording below, or the cookies the site sets, change. */
-const COOKIES_UPDATED_ON = new Date('2026-10-23T00:00:00Z')
+const COOKIES_UPDATED_ON = new Date('2026-10-24T00:00:00Z')
 
 /**
  * Every cookie the site sets. Today only next-intl's locale cookie, written by
@@ -68,6 +68,9 @@ function CookiesPolicy() {
                     children: (
                         <p>
                             {t.rich('thirdParties.body', {
+                                analytics: company.analytics.name,
+                                analyticsOperator: company.analytics.operator,
+                                analyticsHost,
                                 formProvider: company.formProvider.name,
                                 privacy: internalLink('/privacy-policy'),
                             })}

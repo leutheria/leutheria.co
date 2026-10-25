@@ -217,13 +217,13 @@
             "intro": "Visits to the site are counted with {analytics}, an open-source tool that {analyticsOperator} hosts itself. It sets no cookie and stores nothing in your browser.",
             "data": "Pages viewed, the site you came from, device type, browser, operating system, language, screen size, and the country and city derived from your IP address. The IP address is also used to tell visits apart, then it is not kept.",
             "purpose": "Knowing how many people visit the site and which pages they read, to improve it.",
-            "legalBasis": "The legitimate interest of {company} in knowing how its website is used (Article 6(1)(f) GDPR). As nothing is read from or stored in your browser, no consent is required.",
-            "recipients": "<umami>{analyticsOperator}</umami>, which runs the {analytics} instance on its own server in France (OVH), acting as processor; Cloudflare, through which requests to analytics.leutheria.co pass. Nothing is sent to any other third party.",
+            "legalBasis": "The legitimate interest of {company} in knowing how its website is used (Article 6(1)(f) GDPR). The tracker stores nothing in your browser, but before each measurement it reads one local-storage setting, umami.disabled, which turns measurement off when set. {company} relies on the consent exemption the CNIL grants to audience measurement that only produces anonymous statistics for the site’s publisher (Article 82 of the French Data Protection Act), which is why no consent is asked.",
+            "recipients": "<umami>{analyticsOperator}</umami>, which runs the {analytics} instance on its own server in France (OVH), acting as processor; {proxy}, through which requests to {analyticsHost} pass on their way to that server, acting as processor. Nothing is sent to any other third party.",
             "retention": "Statistics kept for as long as the site exists, without IP addresses or any data that identifies you directly."
         },
         "transfers": {
             "title": "Transfers outside the European Union",
-            "body": "{host} and {mailProvider} may process data in the United States; these transfers rely on the EU–US Data Privacy Framework for companies certified under it, and otherwise on the standard contractual clauses adopted by the European Commission. {formProvider}, which operates from India and hosts its data on AWS in the United States, frames transfers out of the European Union with the European Commission’s standard contractual clauses, as set out in its data processing agreement.",
+            "body": "{host}, {mailProvider} and {proxy}, through which the audience measurement passes, may process data in the United States; these transfers rely on the EU–US Data Privacy Framework for companies certified under it, and otherwise on the standard contractual clauses adopted by the European Commission. {formProvider}, which operates from India and hosts its data on AWS in the United States, frames transfers out of the European Union with the European Commission’s standard contractual clauses, as set out in its data processing agreement.",
             "check": "A company’s certification can be checked on <dpf>dataprivacyframework.gov</dpf>."
         },
         "rights": {
@@ -283,7 +283,7 @@
         },
         "thirdParties": {
             "title": "Third-party services",
-            "body": "Fonts are served from leutheria.co itself, and the pages embed no video, map or social-media widget. The contact form only contacts {formProvider} when you send a message — see the <privacy>privacy policy</privacy>."
+            "body": "Fonts are served from leutheria.co itself, and the pages embed no video, map or social-media widget. Every page loads the {analytics} audience-measurement script from {analyticsHost}, run by {analyticsOperator}: it sets no cookie and only reads one local-storage setting, umami.disabled, which turns it off. The contact form only contacts {formProvider} when you send a message. Both are described in the <privacy>privacy policy</privacy>."
         },
         "manage": {
             "title": "Managing cookies",

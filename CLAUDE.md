@@ -79,3 +79,17 @@ Posts directly to Web3Forms from the browser — no API route, no server-side se
 `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` is public by design. Validation rules live in
 `src/lib/contact-form.ts` and return error _codes_ resolved against `Contact.errors.*`;
 keep them locale-agnostic.
+
+## Analytics
+
+Umami, self-hosted by SILARHI, loads on every page from `company.analytics.scriptUrl`
+(`analytics.leutheria.co`, proxied by Cloudflare) in `src/app/[locale]/layout.tsx`. See
+`README.md` § Analytics.
+
+- Keep `data-domains="leutheria.co"` on the script tag: it keeps `pnpm dev` and Vercel
+  previews out of the stats.
+- The privacy and cookies pages describe exactly what the tracker does (no cookie, a read of
+  `localStorage['umami.disabled']`, Cloudflare and SILARHI as recipients). A change to the
+  tracker, its host or its attributes means updating both pages and their `*_UPDATED_ON`.
+- Track events with tool-agnostic `data-analytics-event` / `data-analytics-*` attributes read
+  by our own listener, which alone calls `window.umami`. Never `data-umami-event*`.
