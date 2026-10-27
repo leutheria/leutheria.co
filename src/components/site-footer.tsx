@@ -50,6 +50,9 @@ export function SiteFooter() {
                         <a href={company.facebookUrl} target="_blank" rel="noreferrer noopener" className={linkClass}>
                             {t('followLabel')}
                         </a>
+                        <a href={company.linkedinUrl} target="_blank" rel="noreferrer noopener" className={linkClass}>
+                            {t('linkedinLabel')}
+                        </a>
                     </nav>
                 </div>
 

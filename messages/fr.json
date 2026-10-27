@@ -3,12 +3,12 @@
         "siteName": "Leutheria",
         "titleTemplate": "%s — Leutheria",
         "home": {
-            "title": "Leutheria — Le partenaire de vos fournitures administratives",
-            "description": "Leutheria fournit aux entreprises françaises leurs fournitures de bureau et administratives, sélectionnées pour leur qualité. Demandez un devis."
+            "title": "Leutheria — Les essentiels du quotidien, pour les entreprises et les particuliers en Europe",
+            "description": "Leutheria est une société française de e-commerce qui vend en ligne des produits du quotidien aux entreprises et aux particuliers partout en Europe. Fabricants, devenez fournisseur."
         },
         "contact": {
             "title": "Nous contacter",
-            "description": "Demandez un devis, proposez un partenariat ou posez-nous une question — l’équipe Leutheria répond rapidement."
+            "description": "Une question, un partenariat ou un produit à proposer ? Contactez l’équipe Leutheria ; les fabricants peuvent écrire à sourcing@leutheria.co."
         },
         "legal": {
             "title": "Mentions légales",
@@ -37,42 +37,42 @@
     },
     "Home": {
         "hero": {
-            "eyebrow": "Fournitures de bureau et administratives",
-            "title": "Le partenaire de vos fournitures administratives.",
-            "lead": "Fondée en 2020, Leutheria fournit aux entreprises françaises les fournitures dont elles ont besoin au quotidien. Nous sélectionnons sur la qualité et la régularité : vos commandes restent prévisibles, et ce que vos clients ont entre les mains reflète votre niveau d’exigence.",
-            "ctaPrimary": "Demander un devis",
+            "eyebrow": "E-commerce · Europe",
+            "title": "Les essentiels du quotidien, pour les entreprises et les particuliers.",
+            "lead": "Fondée à Paris en 2020, Leutheria vend en ligne des produits du quotidien aux entreprises et aux particuliers partout en Europe. Nous sélectionnons chaque produit sur la qualité et la régularité, et travaillons directement avec les fabricants.",
+            "ctaPrimary": "Nous contacter",
             "ctaSecondary": "Pourquoi Leutheria"
         },
         "offer": {
-            "title": "Ce que nous fournissons",
-            "lead": "Des consommables du quotidien, sélectionnés pour que le réassort reste une formalité.",
-            "supplies": {
-                "title": "Fournitures administratives",
-                "body": "Papier, écriture, classement et les consommables que vos bureaux utilisent chaque jour. Des références fiables sur lesquelles vous pouvez vous standardiser."
+            "title": "Ce que nous vendons",
+            "lead": "Trois thématiques, une même exigence : des produits que l’on recommande sans y réfléchir à deux fois.",
+            "retail": {
+                "title": "Commerce & point de vente",
+                "body": "Les consommables qui font tourner comptoirs, caisses et terminaux de paiement, jour après jour, dans les commerces et les entreprises."
             },
-            "quality": {
-                "title": "Sélectionnées pour leur qualité",
-                "body": "Nous privilégions des matériaux qui tiennent à l’usage : un réassort n’est jamais un pari, et rien n’est à vérifier deux fois."
+            "kitchen": {
+                "title": "Cuisine & restauration",
+                "body": "Des équipements pour les cuisines professionnelles et domestiques, choisis pour tenir au service quotidien."
             },
-            "quote": {
-                "title": "Devis sur demande",
-                "body": "Dites-nous ce qu’il vous faut et en quelle quantité. Nous revenons vers vous avec une proposition chiffrée, sans catalogue à parcourir au préalable."
+            "office": {
+                "title": "Bureau & entreprise",
+                "body": "Les fournitures que les bureaux utilisent chaque jour : des références fiables sur lesquelles se standardiser."
             }
         },
         "approach": {
             "title": "Pourquoi Leutheria",
-            "lead": "Ce qu’un fournisseur indépendant peut apporter qu’une place de marché ne peut pas.",
+            "lead": "Une petite équipe indépendante, qui connaît ses produits et ceux qui les fabriquent.",
             "direct": {
-                "title": "Un interlocuteur direct",
-                "body": "Vous parlez aux personnes qui traitent votre commande. Pas de centre d’appels, pas de file de tickets, pas de gestionnaire de compte qui change chaque trimestre."
+                "title": "Des relations directes",
+                "body": "Nous travaillons directement avec les fabricants. Vous échangez avec les personnes qui décident, pas avec une chaîne d’intermédiaires."
             },
             "standard": {
-                "title": "Une qualité que vos clients remarquent",
-                "body": "Ce qui sort de vos bureaux dit quelque chose de votre entreprise. Nous sélectionnons sur ce critère, pas sur le seul prix unitaire."
+                "title": "La qualité avant le prix",
+                "body": "Nous sélectionnons sur la qualité et la régularité, pas sur le seul prix unitaire : chaque réassort livre le même produit."
             },
-            "french": {
-                "title": "Une société française",
-                "body": "Société immatriculée à Paris depuis 2020, facturation et contrats de droit français."
+            "europe": {
+                "title": "Partout en Europe",
+                "body": "Société française immatriculée à Paris depuis 2020, qui vend en ligne à des clients dans toute l’Europe."
             }
         },
         "company": {
@@ -86,14 +86,14 @@
             "locationValue": "{city}, France"
         },
         "cta": {
-            "title": "Besoin d’un devis ?",
-            "body": "Dites-nous ce qu’il vous faut et en quelle quantité. Nous lisons chaque message et revenons vers vous rapidement.",
-            "button": "Nous contacter"
+            "title": "Vous êtes fabricant ?",
+            "body": "Si vos produits correspondent à ces thématiques et que vous cherchez un partenaire fiable en Europe, écrivez-nous. Nous lisons chaque proposition et revenons vers vous rapidement.",
+            "button": "Devenir fournisseur"
         }
     },
     "Contact": {
         "title": "Nous contacter",
-        "lead": "Un devis, un partenariat, ou tout autre sujet ? Écrivez-nous : le formulaire arrive directement dans notre boîte de réception.",
+        "lead": "Une question, un partenariat ou un produit à proposer ? Écrivez-nous : le formulaire arrive directement dans notre boîte de réception. Fabricants, vous pouvez aussi écrire directement à <mail>{sourcingEmail}</mail>.",
         "fields": {
             "name": "Nom",
             "email": "Adresse e-mail",
@@ -167,7 +167,7 @@
         },
         "terms": {
             "title": "Conditions de vente",
-            "body": "{company} vend exclusivement à des professionnels, sur devis, et ses conditions générales de vente sont transmises avec chaque devis."
+            "body": "{company} vend ses produits en ligne via des places de marché, aux conditions affichées sur chaque place de marché au moment de la commande. Les professionnels qui achètent directement auprès de {company} reçoivent ses conditions générales de vente avec chaque devis."
         },
         "liability": {
             "title": "Responsabilité",
@@ -296,9 +296,10 @@
         "cta": "Retour à l’accueil"
     },
     "Footer": {
-        "tagline": "Un monde meilleur pour votre entreprise. Fournitures de bureau et administratives pour les entreprises françaises, sélectionnées pour leur qualité et leur régularité.",
+        "tagline": "Un monde meilleur pour votre entreprise. Des produits du quotidien pour les entreprises et les particuliers partout en Europe, sélectionnés pour leur qualité et leur régularité.",
         "navLabel": "Navigation de bas de page",
         "followLabel": "Facebook",
+        "linkedinLabel": "LinkedIn",
         "rights": "Tous droits réservés."
     }
 }

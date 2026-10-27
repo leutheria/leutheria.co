@@ -32,8 +32,11 @@ export const company = {
         country: 'France',
     },
     email: 'guillaume@leutheria.co',
+    /** Where manufacturers send their proposals (home call to action, contact page). */
+    sourcingEmail: 'sourcing@leutheria.co',
     publicationDirector: 'Guillaume Sainthillier',
     facebookUrl: 'https://www.facebook.com/leutheriaFrance/',
+    linkedinUrl: 'https://www.linkedin.com/company/leutheria-fr/',
     /** Required in French "mentions légales": identity of the hosting provider. */
     host: {
         name: 'Vercel Inc.',

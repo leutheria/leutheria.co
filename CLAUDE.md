@@ -5,7 +5,10 @@ Guidance for Claude Code when working in this repository.
 ## What this is
 
 The corporate website of **Leutheria** (SARL, RCS Paris, SIREN 891978819) — a French
-supplier of office and administrative materials. Next.js 16 App Router, TypeScript,
+e-commerce company selling everyday essentials to businesses and households across Europe.
+The copy speaks in themes (retail & point of sale, kitchen & catering, office & business):
+never name individual products or the marketplaces they sell on. Manufacturers are pointed
+to `company.sourcingEmail`. Next.js 16 App Router, TypeScript,
 Tailwind v4, bilingual EN/FR via next-intl, deployed on Vercel. It replaced a WordPress
 (Roots Bedrock) install.
 
