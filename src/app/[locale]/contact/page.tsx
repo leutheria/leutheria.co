@@ -42,7 +42,19 @@ function ContactIntro() {
     return (
         <div className="max-w-2xl">
             <h1 className="font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">{t('title')}</h1>
-            <p className="mt-5 text-lg leading-relaxed text-muted">{t('lead')}</p>
+            <p className="mt-5 text-lg leading-relaxed text-muted">
+                {t.rich('lead', {
+                    sourcingEmail: company.sourcingEmail,
+                    mail: (chunks) => (
+                        <a
+                            href={`mailto:${company.sourcingEmail}`}
+                            className="text-foreground underline-offset-4 hover:text-accent hover:underline"
+                        >
+                            {chunks}
+                        </a>
+                    ),
+                })}
+            </p>
         </div>
     )
 }

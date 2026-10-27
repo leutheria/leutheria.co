@@ -3,12 +3,12 @@
         "siteName": "Leutheria",
         "titleTemplate": "%s — Leutheria",
         "home": {
-            "title": "Leutheria — Your administrative supplies partner",
-            "description": "Leutheria supplies French businesses with office and administrative materials, selected for quality and consistency. Request a quote."
+            "title": "Leutheria — Everyday essentials for businesses and homes across Europe",
+            "description": "Leutheria is a French e-commerce company selling everyday essentials online to businesses and households across Europe. Manufacturers, become a supplier."
         },
         "contact": {
             "title": "Contact us",
-            "description": "Request a quote, discuss a partnership, or ask us anything — the Leutheria team answers quickly."
+            "description": "A question, a partnership or a product to propose? Contact the Leutheria team; manufacturers can write to sourcing@leutheria.co."
         },
         "legal": {
             "title": "Legal notice",
@@ -37,42 +37,42 @@
     },
     "Home": {
         "hero": {
-            "eyebrow": "Office and administrative supplies",
-            "title": "Your administrative supplies partner.",
-            "lead": "Founded in 2020, Leutheria supplies French businesses with the office materials they run on. We select for quality and consistency, so ordering stays predictable and what your clients handle reflects the standard you set.",
-            "ctaPrimary": "Request a quote",
+            "eyebrow": "E-commerce · Europe",
+            "title": "Everyday essentials for businesses and homes.",
+            "lead": "Founded in Paris in 2020, Leutheria sells everyday essentials online to businesses and households across Europe. We select each product for quality and consistency, and work directly with the manufacturers who make them.",
+            "ctaPrimary": "Contact us",
             "ctaSecondary": "Why Leutheria"
         },
         "offer": {
-            "title": "What we supply",
-            "lead": "Everyday consumables, chosen to be reordered rather than reconsidered.",
-            "supplies": {
-                "title": "Administrative supplies",
-                "body": "Paper, stationery, filing and the day-to-day consumables your offices go through. Dependable references you can standardise on."
+            "title": "What we sell",
+            "lead": "Three themes, one standard: products people reorder without a second thought.",
+            "retail": {
+                "title": "Retail & point of sale",
+                "body": "Consumables that keep counters, tills and card terminals running, day after day, in shops and businesses."
             },
-            "quality": {
-                "title": "Selected for quality",
-                "body": "We favour materials that hold up in daily use, so a reorder is never a gamble and nothing has to be checked twice."
+            "kitchen": {
+                "title": "Kitchen & catering",
+                "body": "Equipment for professional and home kitchens, chosen to hold up through daily service."
             },
-            "quote": {
-                "title": "Quote on request",
-                "body": "Tell us what you need and in what volume. We come back with a priced proposal, without a catalogue to wade through first."
+            "office": {
+                "title": "Office & business",
+                "body": "The supplies offices go through every day: dependable references customers can standardise on."
             }
         },
         "approach": {
             "title": "Why Leutheria",
-            "lead": "What a small, independent supplier can offer that a marketplace cannot.",
+            "lead": "A small, independent team that knows its products and the people who make them.",
             "direct": {
-                "title": "Direct contact",
-                "body": "You talk to the people who handle your order. No call centre, no ticket queue, no account manager who changes every quarter."
+                "title": "Direct relationships",
+                "body": "We work directly with manufacturers. You talk to the people who make the decisions, not to a chain of intermediaries."
             },
             "standard": {
-                "title": "Quality your clients notice",
-                "body": "The materials that leave your desk say something about your business. We select on that basis, not on unit price alone."
+                "title": "Quality before price",
+                "body": "We select on quality and consistency, not on unit price alone, so customers get the same product every time they reorder."
             },
-            "french": {
-                "title": "Established in France",
-                "body": "A French company registered in Paris since 2020, invoicing and contracting under French law."
+            "europe": {
+                "title": "Selling across Europe",
+                "body": "A French company registered in Paris since 2020, selling online to customers throughout Europe."
             }
         },
         "company": {
@@ -86,14 +86,14 @@
             "locationValue": "{city}, France"
         },
         "cta": {
-            "title": "Need a quote?",
-            "body": "Tell us what you need and in what volume. We read every message and come back to you quickly.",
-            "button": "Contact us"
+            "title": "Are you a manufacturer?",
+            "body": "If your products fit these themes and you are looking for a reliable partner in Europe, write to us. We read every proposal and come back to you quickly.",
+            "button": "Become a supplier"
         }
     },
     "Contact": {
         "title": "Contact us",
-        "lead": "Need a quote, want to discuss a partnership, or something else entirely? Send us a message and we will come back to you quickly.",
+        "lead": "A question, a partnership or a product to propose? Send us a message and we will come back to you quickly. Manufacturers can also write directly to <mail>{sourcingEmail}</mail>.",
         "fields": {
             "name": "Name",
             "email": "Email address",
@@ -167,7 +167,7 @@
         },
         "terms": {
             "title": "Terms of sale",
-            "body": "{company} sells to business customers on quotation only, and its terms and conditions of sale are sent with each quote."
+            "body": "{company} sells its products online through marketplaces, under the terms shown on each marketplace at the time of order. Business customers who buy directly from {company} receive its terms and conditions of sale with each quote."
         },
         "liability": {
             "title": "Liability",
@@ -296,9 +296,10 @@
         "cta": "Back to home"
     },
     "Footer": {
-        "tagline": "A better world for your company. Office and administrative supplies for French businesses, selected for quality and consistency.",
+        "tagline": "A better world for your company. Everyday essentials for businesses and homes across Europe, selected for quality and consistency.",
         "navLabel": "Footer navigation",
         "followLabel": "Facebook",
+        "linkedinLabel": "LinkedIn",
         "rights": "All rights reserved."
     }
 }

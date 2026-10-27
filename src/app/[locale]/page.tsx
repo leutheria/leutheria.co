@@ -87,7 +87,7 @@ function Hero() {
 
 function Offer() {
     const t = useTranslations('Home.offer')
-    const items = ['supplies', 'quality', 'quote'] as const
+    const items = ['retail', 'kitchen', 'office'] as const
 
     return (
         <section className="py-24">
@@ -117,7 +117,7 @@ function Offer() {
 
 function Approach() {
     const t = useTranslations('Home.approach')
-    const items = ['direct', 'standard', 'french'] as const
+    const items = ['direct', 'standard', 'europe'] as const
 
     return (
         <section id="why" className="scroll-mt-20 bg-surface-invert py-24 text-foreground-invert">
@@ -178,9 +178,9 @@ function CallToAction() {
                         {t('title')}
                     </h2>
                     <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted">{t('body')}</p>
-                    <Link href="/contact" className={`${buttonStyles.primary} mt-8`}>
+                    <a href={`mailto:${company.sourcingEmail}`} className={`${buttonStyles.primary} mt-8`}>
                         {t('button')}
-                    </Link>
+                    </a>
                 </div>
             </Container>
         </section>

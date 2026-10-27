@@ -1,7 +1,7 @@
 # leutheria.co
 
-Corporate website for **Leutheria** — a French supplier of office and administrative
-materials (SARL, RCS Paris, APE 47.91A).
+Corporate website for **Leutheria** — a French e-commerce company selling everyday
+essentials to businesses and households across Europe (SARL, RCS Paris, APE 47.91A).
 
 Bilingual (English / French) marketing site with a homepage, a contact form and three
 legal pages (legal notice, privacy policy, cookies). It replaces the previous WordPress (Roots Bedrock) installation.

@@ -8,7 +8,7 @@ import type { Locale } from '@/i18n/routing'
 import { buildAlternates } from '@/lib/metadata'
 
 /** Bump this whenever the wording below changes. */
-const LEGAL_UPDATED_ON = new Date('2026-10-23T00:00:00Z')
+const LEGAL_UPDATED_ON = new Date('2026-10-27T00:00:00Z')
 
 type PageProps = { params: Promise<{ locale: Locale }> }
 
